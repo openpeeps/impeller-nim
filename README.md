@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://github.com/openpeeps/PKG/blob/main/.github/logo.png" width="90px"><br>
-  OpenPeeps repository template for developing libraries,<br>projects and other cool things. 👑 Written in Nim language
+  👑 Nim Bindings to Flutter's 2D vector graphics renderer<br>
+  
 </p>
 
 <p align="center">
@@ -9,21 +9,37 @@
 
 <p align="center">
   <a href="https://github.com/">API reference</a><br>
-  <img src="https://github.com/openpeeps/pistachio/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/pistachio/workflows/docs/badge.svg" alt="Github Actions">
+  <img src="https://github.com/openpeeps/impeller-nim/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/impeller-nim/workflows/docs/badge.svg" alt="Github Actions">
 </p>
 
-## 😍 Key Features
-- [x] Open Source | `MIT` License
-- [x] Written in Nim language
+Impeller is a 2D graphics rendering engine used in Flutter. This package provides Nim bindings to the standalone Impeller library (without Flutter) via the C API. It allows you to use Impeller's powerful rendering capabilities in your Nim applications.
 
-## Examples
-...
+## 😍 Key Features
+- High-performance 2D rendering
+- Support for multiple backends (Metal, Vulkan, OpenGL)
+- Advanced text rendering & Layouting
+- Rich set of drawing primitives and effects
+- Cross-platform support (Windows, macOS, Linux)
+- Easy to Embed (Any OpenGL/Vulkan/Metal)-based app can embed Impeller
+- Low-level API access for maximum control and flexibility
+- High-level API for easier development (coming soon)
+
+## Installation
+First, you will need to install the Impeller library on your system. Follow the instructions from the [Impeller Standalone SDK](https://github.com/flutter/flutter/blob/main/engine/src/flutter/impeller/toolkit/interop/README.md) to build and install the library for your platform.
+
+Then, add the Nim bindings to your project:
+
+```nim
+nimble install impeller
+```
+
+todo. tests, examples, stuff
 
 ### ❤ Contributions & Support
-- 🐛 Found a bug? [Create a new Issue](/issues)
-- 👋 Wanna help? [Fork it!](/fork)
+- 🐛 Found a bug? [Create a new Issue](https://github.com/openpeeps/impeller-nim/issues)
+- 👋 Wanna help? [Fork it!](https://github.com/openpeeps/impeller-nim/fork)
 - 😎 [Get €20 in cloud credits from Hetzner](https://hetzner.cloud/?ref=Hm0mYGM9NxZ4)
 
 ### 🎩 License
-{PKG} | MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
+MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
 Copyright OpenPeeps & Contributors &mdash; All rights reserved.
