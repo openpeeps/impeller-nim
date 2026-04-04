@@ -4,11 +4,11 @@
 </p>
 
 <p align="center">
-  <code>nimble install {PKG}</code>
+  <code>nimble install impeller</code>
 </p>
 
 <p align="center">
-  <a href="https://github.com/">API reference</a><br>
+  <a href="https://openpeeps.github.io/impeller-nim">API reference</a><br>
   <img src="https://github.com/openpeeps/impeller-nim/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/impeller-nim/workflows/docs/badge.svg" alt="Github Actions">
 </p>
 
