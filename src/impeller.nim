@@ -6,3 +6,6 @@
 
 import ./impeller/bindings/impeller_api
 export impeller_api
+
+import ./impeller/[canvas, text]
+export canvas, text
