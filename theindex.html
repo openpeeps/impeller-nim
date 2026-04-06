@@ -25,8 +25,62 @@
   <div class="document" id="documentId">
     <div class="container">
       <h1 class="title">Index</h1>
-      Modules: <a href="index.html">impeller</a>, <a href="impeller/bindings/impeller_api.html">impeller/bindings/impeller_api</a>.<br/><p /><h2>API symbols</h2>
-<dl><dt><a name="ImpellerBlendMode" href="#ImpellerBlendMode"><span>ImpellerBlendMode:</span></a></dt><dd><ul class="simple">
+      Modules: <a href="index.html">impeller</a>, <a href="impeller/bindings/impeller_api.html">impeller/bindings/impeller_api</a>, <a href="impeller/canvas.html">impeller/canvas</a>, <a href="impeller/text.html">impeller/text</a>.<br/><p /><h2>API symbols</h2>
+<dl><dt><a name="addGradientPoint" href="#addGradientPoint"><span>addGradientPoint:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc addGradientPoint(gradient: var LinearGradient; color: ColorRGBA;
+                 position: cfloat)" href="impeller/canvas.html#addGradientPoint%2CLinearGradient%2CColorRGBA%2Ccfloat">canvas: proc addGradientPoint(gradient: var LinearGradient; color: ColorRGBA;
+                 position: cfloat)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="canvas: proc addGradientPoint(gradient: var LinearGradient; color: string; position: float32)" href="impeller/canvas.html#addGradientPoint%2CLinearGradient%2Cstring%2Cfloat32">canvas: proc addGradientPoint(gradient: var LinearGradient; color: string; position: float32)</a></li>
+          </ul></dd>
+<dt><a name="CircleShape" href="#CircleShape"><span>CircleShape:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: object CircleShape" href="impeller/canvas.html#CircleShape">canvas: object CircleShape</a></li>
+          </ul></dd>
+<dt><a name="drawCircle" href="#drawCircle"><span>drawCircle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc drawCircle(builder: ImpellerDisplayListBuilder; circle: CircleShape;
+           paint: ImpellerPaint)" href="impeller/canvas.html#drawCircle%2CImpellerDisplayListBuilder%2CCircleShape%2CImpellerPaint">canvas: proc drawCircle(builder: ImpellerDisplayListBuilder; circle: CircleShape;
+           paint: ImpellerPaint)</a></li>
+          </ul></dd>
+<dt><a name="drawGradient" href="#drawGradient"><span>drawGradient:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc drawGradient(builder: ImpellerDisplayListBuilder; gradient: var LinearGradient)" href="impeller/canvas.html#drawGradient%2CImpellerDisplayListBuilder%2CLinearGradient">canvas: proc drawGradient(builder: ImpellerDisplayListBuilder; gradient: var LinearGradient)</a></li>
+          </ul></dd>
+<dt><a name="drawParagraph" href="#drawParagraph"><span>drawParagraph:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;
+              x, y: float32 = 0.0)" href="impeller/text.html#drawParagraph%2CImpellerDisplayListBuilder%2CParagraph%2Cfloat32%2Cfloat32">text: proc drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;
+              x, y: float32 = 0.0)</a></li>
+          </ul></dd>
+<dt><a name="drawRect" href="#drawRect"><span>drawRect:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: ColorRGBA)" href="impeller/canvas.html#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2CColorRGBA">canvas: proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: ColorRGBA)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="canvas: proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: string)" href="impeller/canvas.html#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2Cstring">canvas: proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: string)</a></li>
+          </ul></dd>
+<dt><a name="FontStyle" href="#FontStyle"><span>FontStyle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: type FontStyle" href="impeller/text.html#FontStyle">text: type FontStyle</a></li>
+          </ul></dd>
+<dt><a name="FontWeight" href="#FontWeight"><span>FontWeight:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: type FontWeight" href="impeller/text.html#FontWeight">text: type FontWeight</a></li>
+          </ul></dd>
+<dt><a name="getHeight" href="#getHeight"><span>getHeight:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc getHeight(p: Paragraph): float32" href="impeller/text.html#getHeight%2CParagraph">text: proc getHeight(p: Paragraph): float32</a></li>
+          </ul></dd>
+<dt><a name="getWidth" href="#getWidth"><span>getWidth:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc getWidth(p: Paragraph): float32" href="impeller/text.html#getWidth%2CParagraph">text: proc getWidth(p: Paragraph): float32</a></li>
+          </ul></dd>
+<dt><a name="GradientColor" href="#GradientColor"><span>GradientColor:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: object GradientColor" href="impeller/canvas.html#GradientColor">canvas: object GradientColor</a></li>
+          </ul></dd>
+<dt><a name="ImpellerBlendMode" href="#ImpellerBlendMode"><span>ImpellerBlendMode:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="impeller_api: enum ImpellerBlendMode" href="impeller/bindings/impeller_api.html#ImpellerBlendMode">impeller_api: enum ImpellerBlendMode</a></li>
           </ul></dd>
@@ -1208,11 +1262,125 @@
 <li><a class="reference external"
           data-doc-search-tag="impeller_api: proc ImpellerVulkanSwapchainRetain(swapchain: ImpellerVulkanSwapchain)" href="impeller/bindings/impeller_api.html#ImpellerVulkanSwapchainRetain%2CImpellerVulkanSwapchain">impeller_api: proc ImpellerVulkanSwapchainRetain(swapchain: ImpellerVulkanSwapchain)</a></li>
           </ul></dd>
+<dt><a name="initGradientPoint" href="#initGradientPoint"><span>initGradientPoint:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc initGradientPoint(color: string; position: float32): GradientColor" href="impeller/canvas.html#initGradientPoint%2Cstring%2Cfloat32">canvas: proc initGradientPoint(color: string; position: float32): GradientColor</a></li>
+          </ul></dd>
+<dt><a name="initGradientPointAlpha" href="#initGradientPointAlpha"><span>initGradientPointAlpha:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc initGradientPointAlpha(color: string; alpha: uint8; position: float32): GradientColor" href="impeller/canvas.html#initGradientPointAlpha%2Cstring%2Cuint8%2Cfloat32">canvas: proc initGradientPointAlpha(color: string; alpha: uint8; position: float32): GradientColor</a></li>
+          </ul></dd>
+<dt><a name="initGradientPointHexAlpha" href="#initGradientPointHexAlpha"><span>initGradientPointHexAlpha:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc initGradientPointHexAlpha(color: Color; position: float32): GradientColor" href="impeller/canvas.html#initGradientPointHexAlpha%2CColor%2Cfloat32">canvas: proc initGradientPointHexAlpha(color: Color; position: float32): GradientColor</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="canvas: proc initGradientPointHexAlpha(color: string; position: float32): GradientColor" href="impeller/canvas.html#initGradientPointHexAlpha%2Cstring%2Cfloat32">canvas: proc initGradientPointHexAlpha(color: string; position: float32): GradientColor</a></li>
+          </ul></dd>
+<dt><a name="initLinearGradient" href="#initLinearGradient"><span>initLinearGradient:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc initLinearGradient(colors: seq[GradientColor];
+                   startPoint: ImpellerPoint = ImpellerPoint(x: 0.0, y: 0.0);
+                   endPoint: ImpellerPoint = ImpellerPoint();
+                   width: float32 = 100.0'f32; height: float32 = 100.0'f32): LinearGradient" href="impeller/canvas.html#initLinearGradient%2Cseq%5BGradientColor%5D%2CImpellerPoint%2CImpellerPoint%2Cfloat32%2Cfloat32">canvas: proc initLinearGradient(colors: seq[GradientColor];
+                   startPoint: ImpellerPoint = ImpellerPoint(x: 0.0, y: 0.0);
+                   endPoint: ImpellerPoint = ImpellerPoint();
+                   width: float32 = 100.0'f32; height: float32 = 100.0'f32): LinearGradient</a></li>
+          </ul></dd>
+<dt><a name="layoutParagraph" href="#layoutParagraph"><span>layoutParagraph:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc layoutParagraph(ctx: TypographyContext; text: string; style: TextStyle;
+                width: float32): Paragraph" href="impeller/text.html#layoutParagraph%2CTypographyContext%2Cstring%2CTextStyle%2Cfloat32">text: proc layoutParagraph(ctx: TypographyContext; text: string; style: TextStyle;
+                width: float32): Paragraph</a></li>
+          </ul></dd>
+<dt><a name="LinearGradient" href="#LinearGradient"><span>LinearGradient:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: object LinearGradient" href="impeller/canvas.html#LinearGradient">canvas: object LinearGradient</a></li>
+          </ul></dd>
+<dt><a name="newCircle" href="#newCircle"><span>newCircle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc newCircle(radius: float32; x: float32 = 0.0; y: float32 = 0.0): CircleShape" href="impeller/canvas.html#newCircle%2Cfloat32%2Cfloat32%2Cfloat32">canvas: proc newCircle(radius: float32; x: float32 = 0.0; y: float32 = 0.0): CircleShape</a></li>
+          </ul></dd>
+<dt><a name="newRect" href="#newRect"><span>newRect:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc newRect(width, height: float32; x, y: float32 = 0.0): RectShape" href="impeller/canvas.html#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32">canvas: proc newRect(width, height: float32; x, y: float32 = 0.0): RectShape</a></li>
+          </ul></dd>
+<dt><a name="newRectangle" href="#newRectangle"><span>newRectangle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc newRectangle(width, height: float32; x, y: float32 = 0.0): RectShape" href="impeller/canvas.html#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32">canvas: proc newRectangle(width, height: float32; x, y: float32 = 0.0): RectShape</a></li>
+          </ul></dd>
+<dt><a name="newSquare" href="#newSquare"><span>newSquare:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc newSquare(size: float32; x, y: float32 = 0.0): RectShape" href="impeller/canvas.html#newSquare%2Cfloat32%2Cfloat32%2Cfloat32">canvas: proc newSquare(size: float32; x, y: float32 = 0.0): RectShape</a></li>
+          </ul></dd>
+<dt><a name="newTextStyle" href="#newTextStyle"><span>newTextStyle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc newTextStyle(fontFamily: string = &quot;sans-serif&quot;; fontSize: float32 = 14.0;
+             fontWeight: FontWeight = kImpellerFontWeight400;
+             fontStyle: FontStyle = kImpellerFontStyleNormal;
+             color: ColorRGBA = rgba(0, 0, 0, 255);
+             background: Option[ColorRGBA] = none(ColorRGBA);
+             align: TextAlign = kImpellerTextAlignmentLeft;
+             direction: TextDirection = kImpellerTextDirectionLTR; decoration: Option[
+    ImpellerTextDecoration] = none(ImpellerTextDecoration)): TextStyle" href="impeller/text.html#newTextStyle%2Cstring%2Cfloat32%2CImpellerFontWeight%2CImpellerFontStyle%2CColorRGBA%2COption%5BColorRGBA%5D%2CImpellerTextAlignment%2CImpellerTextDirection%2COption%5BImpellerTextDecoration%5D">text: proc newTextStyle(fontFamily: string = &quot;sans-serif&quot;; fontSize: float32 = 14.0;
+             fontWeight: FontWeight = kImpellerFontWeight400;
+             fontStyle: FontStyle = kImpellerFontStyleNormal;
+             color: ColorRGBA = rgba(0, 0, 0, 255);
+             background: Option[ColorRGBA] = none(ColorRGBA);
+             align: TextAlign = kImpellerTextAlignmentLeft;
+             direction: TextDirection = kImpellerTextDirectionLTR; decoration: Option[
+    ImpellerTextDecoration] = none(ImpellerTextDecoration)): TextStyle</a></li>
+          </ul></dd>
+<dt><a name="newTypographyContext" href="#newTypographyContext"><span>newTypographyContext:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc newTypographyContext(): TypographyContext" href="impeller/text.html#newTypographyContext">text: proc newTypographyContext(): TypographyContext</a></li>
+          </ul></dd>
+<dt><a name="Paragraph" href="#Paragraph"><span>Paragraph:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: object Paragraph" href="impeller/text.html#Paragraph">text: object Paragraph</a></li>
+          </ul></dd>
+<dt><a name="RectShape" href="#RectShape"><span>RectShape:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: type RectShape" href="impeller/canvas.html#RectShape">canvas: type RectShape</a></li>
+          </ul></dd>
+<dt><a name="registerFont" href="#registerFont"><span>registerFont:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc registerFont(ctx: var TypographyContext; fontData: seq[byte]; family: string): bool" href="impeller/text.html#registerFont%2CTypographyContext%2Cseq%5Bbyte%5D%2Cstring">text: proc registerFont(ctx: var TypographyContext; fontData: seq[byte]; family: string): bool</a></li>
+          </ul></dd>
+<dt><a name="release" href="#release"><span>release:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: proc release(p: var Paragraph)" href="impeller/text.html#release%2CParagraph">text: proc release(p: var Paragraph)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="text: proc release(ctx: var TypographyContext)" href="impeller/text.html#release%2CTypographyContext">text: proc release(ctx: var TypographyContext)</a></li>
+          </ul></dd>
+<dt><a name="setColor" href="#setColor"><span>setColor:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="canvas: proc setColor(paint: ImpellerPaint; color: ColorRGBA)" href="impeller/canvas.html#setColor%2CImpellerPaint%2CColorRGBA">canvas: proc setColor(paint: ImpellerPaint; color: ColorRGBA)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="canvas: proc setColor(paint: ImpellerPaint; color: ImpellerColor)" href="impeller/canvas.html#setColor%2CImpellerPaint%2CImpellerColor">canvas: proc setColor(paint: ImpellerPaint; color: ImpellerColor)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="canvas: proc setColor(paint: ImpellerPaint; color: string)" href="impeller/canvas.html#setColor%2CImpellerPaint%2Cstring">canvas: proc setColor(paint: ImpellerPaint; color: string)</a></li>
+          </ul></dd>
+<dt><a name="TextAlign" href="#TextAlign"><span>TextAlign:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: type TextAlign" href="impeller/text.html#TextAlign">text: type TextAlign</a></li>
+          </ul></dd>
+<dt><a name="TextDirection" href="#TextDirection"><span>TextDirection:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: type TextDirection" href="impeller/text.html#TextDirection">text: type TextDirection</a></li>
+          </ul></dd>
+<dt><a name="TextStyle" href="#TextStyle"><span>TextStyle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: object TextStyle" href="impeller/text.html#TextStyle">text: object TextStyle</a></li>
+          </ul></dd>
+<dt><a name="TypographyContext" href="#TypographyContext"><span>TypographyContext:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="text: object TypographyContext" href="impeller/text.html#TypographyContext">text: object TypographyContext</a></li>
+          </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-04-04 04:35:38 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-04-06 10:31:50 UTC</small>
       </div>
     </div>
   </div>

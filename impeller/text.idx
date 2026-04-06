@@ -1,0 +1,18 @@
+nimTitle	text	impeller/text.html	module impeller/text		0
+nim	FontWeight	impeller/text.html#FontWeight	type FontWeight		15
+nim	FontStyle	impeller/text.html#FontStyle	type FontStyle		16
+nim	TextAlign	impeller/text.html#TextAlign	type TextAlign		17
+nim	TextDirection	impeller/text.html#TextDirection	type TextDirection		18
+nim	TextStyle	impeller/text.html#TextStyle	object TextStyle		20
+nim	Paragraph	impeller/text.html#Paragraph	object Paragraph		41
+nim	TypographyContext	impeller/text.html#TypographyContext	object TypographyContext		45
+nim	newTypographyContext	impeller/text.html#newTypographyContext	proc newTypographyContext(): TypographyContext		49
+nim	registerFont	impeller/text.html#registerFont,TypographyContext,seq[byte],string	proc registerFont(ctx: var TypographyContext; fontData: seq[byte]; family: string): bool		53
+nim	newTextStyle	impeller/text.html#newTextStyle,string,float32,ImpellerFontWeight,ImpellerFontStyle,ColorRGBA,Option[ColorRGBA],ImpellerTextAlignment,ImpellerTextDirection,Option[ImpellerTextDecoration]	proc newTextStyle(fontFamily: string = "sans-serif"; fontSize: float32 = 14.0;\n             fontWeight: FontWeight = kImpellerFontWeight400;\n             fontStyle: FontStyle = kImpellerFontStyleNormal;\n             color: ColorRGBA = rgba(0, 0, 0, 255);\n             background: Option[ColorRGBA] = none(ColorRGBA);\n             align: TextAlign = kImpellerTextAlignmentLeft;\n             direction: TextDirection = kImpellerTextDirectionLTR; decoration: Option[\n    ImpellerTextDecoration] = none(ImpellerTextDecoration)): TextStyle		86
+nim	layoutParagraph	impeller/text.html#layoutParagraph,TypographyContext,string,TextStyle,float32	proc layoutParagraph(ctx: TypographyContext; text: string; style: TextStyle;\n                width: float32): Paragraph		146
+nim	getWidth	impeller/text.html#getWidth,Paragraph	proc getWidth(p: Paragraph): float32		170
+nim	getHeight	impeller/text.html#getHeight,Paragraph	proc getHeight(p: Paragraph): float32		174
+nim	drawParagraph	impeller/text.html#drawParagraph,ImpellerDisplayListBuilder,Paragraph,float32,float32	proc drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;\n              x, y: float32 = 0.0)		178
+nim	release	impeller/text.html#release,Paragraph	proc release(p: var Paragraph)		184
+nim	release	impeller/text.html#release,TypographyContext	proc release(ctx: var TypographyContext)		190
+nimgrp	release	impeller/text.html#release-procs-all	proc		184

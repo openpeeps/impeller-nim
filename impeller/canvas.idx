@@ -1,0 +1,27 @@
+nimTitle	canvas	impeller/canvas.html	module impeller/canvas		0
+nim	RectShape	impeller/canvas.html#RectShape	type RectShape		17
+nim	CircleShape	impeller/canvas.html#CircleShape	object CircleShape		20
+nim	newRectangle	impeller/canvas.html#newRectangle,float32,float32,float32,float32	proc newRectangle(width, height: float32; x, y: float32 = 0.0): RectShape		25
+nim	newRect	impeller/canvas.html#newRect,float32,float32,float32,float32	proc newRect(width, height: float32; x, y: float32 = 0.0): RectShape		29
+nim	newSquare	impeller/canvas.html#newSquare,float32,float32,float32	proc newSquare(size: float32; x, y: float32 = 0.0): RectShape		33
+nim	newCircle	impeller/canvas.html#newCircle,float32,float32,float32	proc newCircle(radius: float32; x: float32 = 0.0; y: float32 = 0.0): CircleShape		37
+nim	drawCircle	impeller/canvas.html#drawCircle,ImpellerDisplayListBuilder,CircleShape,ImpellerPaint	proc drawCircle(builder: ImpellerDisplayListBuilder; circle: CircleShape;\n           paint: ImpellerPaint)		41
+nim	LinearGradient	impeller/canvas.html#LinearGradient	object LinearGradient		55
+nim	GradientColor	impeller/canvas.html#GradientColor	object GradientColor		73
+nim	addGradientPoint	impeller/canvas.html#addGradientPoint,LinearGradient,ColorRGBA,cfloat	proc addGradientPoint(gradient: var LinearGradient; color: ColorRGBA;\n                 position: cfloat)		98
+nim	addGradientPoint	impeller/canvas.html#addGradientPoint,LinearGradient,string,float32	proc addGradientPoint(gradient: var LinearGradient; color: string; position: float32)		108
+nim	initGradientPoint	impeller/canvas.html#initGradientPoint,string,float32	proc initGradientPoint(color: string; position: float32): GradientColor		113
+nim	initGradientPointAlpha	impeller/canvas.html#initGradientPointAlpha,string,uint8,float32	proc initGradientPointAlpha(color: string; alpha: uint8; position: float32): GradientColor		122
+nim	initGradientPointHexAlpha	impeller/canvas.html#initGradientPointHexAlpha,string,float32	proc initGradientPointHexAlpha(color: string; position: float32): GradientColor		132
+nim	initGradientPointHexAlpha	impeller/canvas.html#initGradientPointHexAlpha,Color,float32	proc initGradientPointHexAlpha(color: Color; position: float32): GradientColor		141
+nim	initLinearGradient	impeller/canvas.html#initLinearGradient,seq[GradientColor],ImpellerPoint,ImpellerPoint,float32,float32	proc initLinearGradient(colors: seq[GradientColor];\n                   startPoint: ImpellerPoint = ImpellerPoint(x: 0.0, y: 0.0);\n                   endPoint: ImpellerPoint = ImpellerPoint();\n                   width: float32 = 100.0'f32; height: float32 = 100.0'f32): LinearGradient		150
+nim	drawGradient	impeller/canvas.html#drawGradient,ImpellerDisplayListBuilder,LinearGradient	proc drawGradient(builder: ImpellerDisplayListBuilder; gradient: var LinearGradient)		164
+nim	setColor	impeller/canvas.html#setColor,ImpellerPaint,ColorRGBA	proc setColor(paint: ImpellerPaint; color: ColorRGBA)		191
+nim	setColor	impeller/canvas.html#setColor,ImpellerPaint,string	proc setColor(paint: ImpellerPaint; color: string)		196
+nim	setColor	impeller/canvas.html#setColor,ImpellerPaint,ImpellerColor	proc setColor(paint: ImpellerPaint; color: ImpellerColor)		201
+nim	drawRect	impeller/canvas.html#drawRect,ImpellerDisplayListBuilder,ImpellerRect,ColorRGBA	proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: ColorRGBA)		205
+nim	drawRect	impeller/canvas.html#drawRect,ImpellerDisplayListBuilder,ImpellerRect,string	proc drawRect(builder: ImpellerDisplayListBuilder; rect: RectShape; color: string)		212
+nimgrp	addgradientpoint	impeller/canvas.html#addGradientPoint-procs-all	proc		98
+nimgrp	setcolor	impeller/canvas.html#setColor-procs-all	proc		191
+nimgrp	drawrect	impeller/canvas.html#drawRect-procs-all	proc		205
+nimgrp	initgradientpointhexalpha	impeller/canvas.html#initGradientPointHexAlpha-procs-all	proc		132
