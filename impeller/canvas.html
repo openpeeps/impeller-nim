@@ -16,13 +16,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="../dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="../dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">impeller/canvas</h1>
       <div class="row">
@@ -170,7 +173,7 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="CircleShape">
-  <dt><pre><a href="canvas.html#CircleShape"><span class="Identifier">CircleShape</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#CircleShape"><span class="Identifier">CircleShape</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">center</span><span class="Operator">*</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a>
   <span class="Identifier">radius</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">cfloat</span></pre></dt>
   <dd>
@@ -180,7 +183,7 @@
   </dd>
 </div>
 <div id="GradientColor">
-  <dt><pre><a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#GradientColor"><span class="Identifier">GradientColor</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">color</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span>          <span class="Comment">## The color of this stop, including alpha for transparency.</span>
   <span class="Identifier">impellerColor</span><span class="Operator">*</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerColor"><span class="Identifier">ImpellerColor</span></a>
   <span class="Identifier">position</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float32</span>         <span class="Comment">## The position of this color stop along the gradient, typically in the range [0.0, 1.0].</span></pre></dt>
@@ -191,10 +194,10 @@
   </dd>
 </div>
 <div id="LinearGradient">
-  <dt><pre><a href="canvas.html#LinearGradient"><span class="Identifier">LinearGradient</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">width</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float32</span>
   <span class="Identifier">startPoint</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">endPoint</span><span class="Operator">*</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a>
-  <span class="Identifier">colors</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a><span class="Other">]</span> <span class="Comment">## The colors for the gradient. The length of this</span>
+  <span class="Identifier">colors</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#GradientColor"><span class="Identifier">GradientColor</span></a><span class="Other">]</span> <span class="Comment">## The colors for the gradient. The length of this</span>
                               <span class="Comment">## sequence should match the length of `stops`.</span>
   <span class="Identifier">stops</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float32</span><span class="Other">]</span>       <span class="Comment">## The positions for each color in the gradient, typically in the range [0.0</span></pre></dt>
   <dd>
@@ -204,7 +207,7 @@
   </dd>
 </div>
 <div id="RectShape">
-  <dt><pre><a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a> <span class="Other">=</span> <a href="bindings/impeller_api.html#ImpellerRect"><span class="Identifier">ImpellerRect</span></a></pre></dt>
+  <dt><pre><a href="#RectShape"><span class="Identifier">RectShape</span></a> <span class="Other">=</span> <a href="bindings/impeller_api.html#ImpellerRect"><span class="Identifier">ImpellerRect</span></a></pre></dt>
   <dd>
     
     Represents a rectangle shape with position and dimensions.
@@ -219,7 +222,7 @@
   <dl class="item">
     <div id="addGradientPoint-procs-all">
   <div id="addGradientPoint,LinearGradient,ColorRGBA,cfloat">
-  <dt><pre><span class="Keyword">proc</span> <a href="#addGradientPoint%2CLinearGradient%2CColorRGBA%2Ccfloat"><span class="Identifier">addGradientPoint</span></a><span class="Other">(</span><span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="canvas.html#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#addGradientPoint%2CLinearGradient%2CColorRGBA%2Ccfloat"><span class="Identifier">addGradientPoint</span></a><span class="Other">(</span><span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span><span class="Other">;</span>
                       <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">cfloat</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -228,7 +231,7 @@
   </dd>
 </div>
 <div id="addGradientPoint,LinearGradient,string,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#addGradientPoint%2CLinearGradient%2Cstring%2Cfloat32"><span class="Identifier">addGradientPoint</span></a><span class="Other">(</span><span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="canvas.html#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#addGradientPoint%2CLinearGradient%2Cstring%2Cfloat32"><span class="Identifier">addGradientPoint</span></a><span class="Other">(</span><span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
                       <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidColor</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -241,7 +244,7 @@
 </div>
 <div id="drawCircle-procs-all">
   <div id="drawCircle,ImpellerDisplayListBuilder,CircleShape,ImpellerPaint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#drawCircle%2CImpellerDisplayListBuilder%2CCircleShape%2CImpellerPaint"><span class="Identifier">drawCircle</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">circle</span><span class="Other">:</span> <a href="canvas.html#CircleShape"><span class="Identifier">CircleShape</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#drawCircle%2CImpellerDisplayListBuilder%2CCircleShape%2CImpellerPaint"><span class="Identifier">drawCircle</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">circle</span><span class="Other">:</span> <a href="#CircleShape"><span class="Identifier">CircleShape</span></a><span class="Other">;</span>
                 <span class="Identifier">paint</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPaint"><span class="Identifier">ImpellerPaint</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -254,7 +257,7 @@
 <div id="drawGradient-procs-all">
   <div id="drawGradient,ImpellerDisplayListBuilder,LinearGradient">
   <dt><pre><span class="Keyword">proc</span> <a href="#drawGradient%2CImpellerDisplayListBuilder%2CLinearGradient"><span class="Identifier">drawGradient</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span>
-                  <span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="canvas.html#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+                  <span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -266,7 +269,7 @@
 </div>
 <div id="drawRect-procs-all">
   <div id="drawRect,ImpellerDisplayListBuilder,ImpellerRect,ColorRGBA">
-  <dt><pre><span class="Keyword">proc</span> <a href="#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2CColorRGBA"><span class="Identifier">drawRect</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">rect</span><span class="Other">:</span> <a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2CColorRGBA"><span class="Identifier">drawRect</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">rect</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a><span class="Other">;</span>
               <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -275,7 +278,7 @@
   </dd>
 </div>
 <div id="drawRect,ImpellerDisplayListBuilder,ImpellerRect,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2Cstring"><span class="Identifier">drawRect</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">rect</span><span class="Other">:</span> <a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#drawRect%2CImpellerDisplayListBuilder%2CImpellerRect%2Cstring"><span class="Identifier">drawRect</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">rect</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a><span class="Other">;</span>
               <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidColor</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -288,7 +291,7 @@
 </div>
 <div id="initGradientPoint-procs-all">
   <div id="initGradientPoint,string,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPoint%2Cstring%2Cfloat32"><span class="Identifier">initGradientPoint</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPoint%2Cstring%2Cfloat32"><span class="Identifier">initGradientPoint</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="#GradientColor"><span class="Identifier">GradientColor</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidColor</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -300,7 +303,7 @@
 </div>
 <div id="initGradientPointAlpha-procs-all">
   <div id="initGradientPointAlpha,string,uint8,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointAlpha%2Cstring%2Cuint8%2Cfloat32"><span class="Identifier">initGradientPointAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">alpha</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointAlpha%2Cstring%2Cuint8%2Cfloat32"><span class="Identifier">initGradientPointAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">alpha</span><span class="Other">:</span> <span class="Identifier">uint8</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="#GradientColor"><span class="Identifier">GradientColor</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidColor</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -312,7 +315,7 @@
 </div>
 <div id="initGradientPointHexAlpha-procs-all">
   <div id="initGradientPointHexAlpha,Color,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointHexAlpha%2CColor%2Cfloat32"><span class="Identifier">initGradientPointHexAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">Color</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointHexAlpha%2CColor%2Cfloat32"><span class="Identifier">initGradientPointHexAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">Color</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="#GradientColor"><span class="Identifier">GradientColor</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -321,7 +324,7 @@
   </dd>
 </div>
 <div id="initGradientPointHexAlpha,string,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointHexAlpha%2Cstring%2Cfloat32"><span class="Identifier">initGradientPointHexAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#initGradientPointHexAlpha%2Cstring%2Cfloat32"><span class="Identifier">initGradientPointHexAlpha</span></a><span class="Other">(</span><span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">position</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <a href="#GradientColor"><span class="Identifier">GradientColor</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">InvalidColor</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -333,9 +336,9 @@
 </div>
 <div id="initLinearGradient-procs-all">
   <div id="initLinearGradient,seq[GradientColor],ImpellerPoint,ImpellerPoint,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#initLinearGradient%2Cseq%5BGradientColor%5D%2CImpellerPoint%2CImpellerPoint%2Cfloat32%2Cfloat32"><span class="Identifier">initLinearGradient</span></a><span class="Other">(</span><span class="Identifier">colors</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="canvas.html#GradientColor"><span class="Identifier">GradientColor</span></a><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">startPoint</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a> <span class="Other">=</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a><span class="Other">(</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#initLinearGradient%2Cseq%5BGradientColor%5D%2CImpellerPoint%2CImpellerPoint%2Cfloat32%2Cfloat32"><span class="Identifier">initLinearGradient</span></a><span class="Other">(</span><span class="Identifier">colors</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#GradientColor"><span class="Identifier">GradientColor</span></a><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">startPoint</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a> <span class="Other">=</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a><span class="Other">(</span>
     <span class="Identifier">x</span><span class="Other">:</span> <span class="FloatNumber">0.0</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">endPoint</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a> <span class="Other">=</span> <a href="bindings/impeller_api.html#ImpellerPoint"><span class="Identifier">ImpellerPoint</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
-                        <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">100.0'f32</span><span class="Other">;</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">100.0'f32</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#LinearGradient"><span class="Identifier">LinearGradient</span></a> {.
+                        <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">100.0'f32</span><span class="Other">;</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">100.0'f32</span><span class="Other">)</span><span class="Other">:</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -347,7 +350,7 @@
 </div>
 <div id="newCircle-procs-all">
   <div id="newCircle,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newCircle%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#CircleShape"><span class="Identifier">CircleShape</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#newCircle%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#CircleShape"><span class="Identifier">CircleShape</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -359,7 +362,7 @@
 </div>
 <div id="newRect-procs-all">
   <div id="newRect,float32,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRect</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a> {.<span class="Identifier">inline</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRect</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.<span class="Identifier">inline</span><span class="Other">,</span>
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -371,7 +374,7 @@
 </div>
 <div id="newRectangle-procs-all">
   <div id="newRectangle,float32,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRectangle</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRectangle</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -383,7 +386,7 @@
 </div>
 <div id="newSquare-procs-all">
   <div id="newSquare,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newSquare</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="canvas.html#RectShape"><span class="Identifier">RectShape</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newSquare</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -433,7 +436,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-04-06 10:31:50 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-07-07 18:01:32 UTC</small>
       </div>
     </div>
   </div>
