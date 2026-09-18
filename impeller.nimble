@@ -2,7 +2,7 @@
 
 import std/os
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "George Lemon"
 description   = "Bindings to Flutter's 2D vector graphics renderer"
 license       = "MIT"
