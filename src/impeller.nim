@@ -7,5 +7,7 @@
 import ./impeller/bindings/impeller_api
 export impeller_api
 
-import ./impeller/[canvas, text]
-export canvas, text
+import ./impeller/[context, paint, path, displaylist, surface, texture,
+    colorsource, filters, canvas, text]
+export context, paint, path, displaylist, surface, texture, colorsource,
+    filters, canvas, text

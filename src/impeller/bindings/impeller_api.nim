@@ -34,7 +34,7 @@ type
   ImpellerVulkanSwapchain* = pointer
   ImpellerFragmentProgram* = pointer
 
-{.push importc, header:"<impeller.h>".}
+{.push importc, header: "<impeller.h>".}
 
 type
   # Function pointer types
@@ -459,3 +459,33 @@ proc ImpellerGlyphInfoIsEllipsis*(glyph_info: ImpellerGlyphInfo): bool
 proc ImpellerGlyphInfoGetTextDirection*(glyph_info: ImpellerGlyphInfo): ImpellerTextDirection
 
 {.pop.}
+
+# ---------------------------------------------------------------------------
+# Version helpers (mirror IMPELLER_MAKE_VERSION / GET_* macros from impeller.h)
+# Current library version: variant 1, major 1, minor 4, patch 0.
+# ---------------------------------------------------------------------------
+const
+  ImpellerVersionVariant* = 1'u32
+  ImpellerVersionMajor* = 1'u32
+  ImpellerVersionMinor* = 4'u32
+  ImpellerVersionPatch* = 0'u32
+
+func impellerMakeVersion*(variant, major, minor, patch: uint32): uint32 {.inline.} =
+  ## Packs a version in a uint32, mirroring IMPELLER_MAKE_VERSION.
+  ((variant shl 29'u32) or (major shl 22'u32) or (minor shl 12'u32) or patch)
+
+const ImpellerVersion* = ((1'u32 shl 29'u32) or (1'u32 shl 22'u32) or
+    (4'u32 shl 12'u32) or 0'u32)
+  ## The current Impeller API version. Pass to context constructors.
+
+func impellerVersionGetVariant*(version: uint32): uint32 {.inline.} =
+  version shr 29'u32
+
+func impellerVersionGetMajor*(version: uint32): uint32 {.inline.} =
+  (version shr 22'u32) and 0x7F'u32
+
+func impellerVersionGetMinor*(version: uint32): uint32 {.inline.} =
+  (version shr 12'u32) and 0x3FF'u32
+
+func impellerVersionGetPatch*(version: uint32): uint32 {.inline.} =
+  version and 0xFFF'u32

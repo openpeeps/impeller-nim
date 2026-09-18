@@ -6,6 +6,11 @@
 
 import pkg/chroma
 import ./bindings/impeller_api
+import ./paint
+import ./displaylist
+import ./colorsource
+
+export paint, displaylist, colorsource
 
 ## This module defines high-level canvas-related types and procedures
 ## for working with shapes and gradients in the Impeller rendering engine.
@@ -22,15 +27,15 @@ type
     center*: ImpellerPoint
     radius*: cfloat
 
-proc newRectangle*(width, height: float32, x, y: float32 = 0): RectShape =
+proc newRectangle*(width, height: float32, x: float32 = 0, y: float32 = 0): RectShape =
   ## Creates a new rectangle shape with the specified position and dimensions.
   RectShape(x: x.cfloat, y: y.cfloat, width: width.cfloat, height: height.cfloat)
 
-proc newRect*(width, height: float32, x, y: float32 = 0): RectShape {.inline.} =
+proc newRect*(width, height: float32, x: float32 = 0, y: float32 = 0): RectShape {.inline.} =
   ## Creates a new rectangle shape with the specified position and dimensions.
   newRectangle(width, height, x, y)
 
-proc newSquare*(size: float32, x, y: float32 = 0): RectShape =
+proc newSquare*(size: float32, x: float32 = 0, y: float32 = 0): RectShape =
   ## Creates a new square shape with the specified position and size.
   newRectangle(size, size, x, y)
 
@@ -38,14 +43,18 @@ proc newCircle*(radius: float32, x: float32 = 0, y: float32 = 0): CircleShape =
   ## Creates a new circle shape with the specified center and radius.
   CircleShape(center: ImpellerPoint(x: x.cfloat, y: y.cfloat), radius: radius.cfloat)
 
-proc drawCircle*(builder: ImpellerDisplayListBuilder, circle: CircleShape, paint: ImpellerPaint) =
+proc circleOvalRect*(circle: CircleShape): ImpellerRect =
+  ## Pure helper: bounding rect of a circle. Separated for testability.
   let diameter = circle.radius * 2
-  var ovalRect = ImpellerRect(
+  ImpellerRect(
     x: circle.center.x - circle.radius,
     y: circle.center.y - circle.radius,
     width: diameter,
     height: diameter
   )
+
+proc drawCircle*(builder: ImpellerDisplayListBuilder, circle: CircleShape, paint: ImpellerPaint) =
+  var ovalRect = circleOvalRect(circle)
   ImpellerDisplayListBuilderDrawOval(builder, addr ovalRect, paint)
 
 #
@@ -78,22 +87,6 @@ type
       # The color at this stop, including alpha for transparency.
     position*: float32
       ## The position of this color stop along the gradient, typically in the range [0.0, 1.0].
-
-proc toUnit(v: SomeNumber): cfloat =
-  # Converts a color component value to a unit float in the range [0.0, 1.0].
-  let f = v.float32
-  if f > 1.0'f32: (f / 255.0'f32).cfloat else: f.cfloat
-
-proc toImpellerColor(c: ColorRGBA): ImpellerColor =
-  # Converts a ColorRGBA to an ImpellerColor, normalizing
-  # the color components to the range [0.0, 1.0].
-  ImpellerColor(
-    red: toUnit(c.r),
-    green: toUnit(c.g),
-    blue: toUnit(c.b),
-    alpha: toUnit(c.a),
-    color_space: kImpellerColorSpaceSRGB
-  )
 
 proc addGradientPoint*(gradient: var LinearGradient, color: ColorRGBA, position: cfloat) =
   ## Adds a color stop to the gradient at the specified position.
@@ -163,30 +156,30 @@ proc initLinearGradient*(colors: seq[GradientColor],
 
 proc drawGradient*(builder: ImpellerDisplayListBuilder, gradient: var LinearGradient) =
   ## Draws the specified gradient using the provided display list builder.
+  if gradient.colors.len < 2:
+    raise newException(ValueError, "gradient needs at least 2 color stops")
   var stops: seq[cfloat]
   var impellerColors: seq[ImpellerColor]
   for color in gradient.colors:
     impellerColors.add(color.impellerColor)
     stops.add(color.position.cfloat)
-  
-  var identityMatrix: ImpellerMatrix
-  for i in 0..<16:
-    identityMatrix.m[i] = if i mod 5 == 0: 1.0 else: 0.0
 
+  var identity = identityMatrix()
   let grView = ImpellerColorSourceCreateLinearGradientNew(
     addr gradient.startPoint, addr gradient.endPoint,
     uint32(stops.len), addr impellerColors[0], addr stops[0],
-    kImpellerTileModeClamp, addr identityMatrix
+    kImpellerTileModeClamp, addr identity
   )
-
+  if grView == nil:
+    raise newException(OSError, "ImpellerColorSourceCreateLinearGradientNew failed")
   let paintView = ImpellerPaintNew()
-  ImpellerPaintSetColorSource(paintView, grView)
-
-  var rect = ImpellerRect(x: 0, y: 0, width: gradient.width.cfloat, height: gradient.height.cfloat)
-  ImpellerDisplayListBuilderDrawRect(builder, addr rect, paintView)
-
-  ImpellerColorSourceRelease(grView)
-  ImpellerPaintRelease(paintView)
+  try:
+    ImpellerPaintSetColorSource(paintView, grView)
+    var rect = ImpellerRect(x: 0, y: 0, width: gradient.width.cfloat, height: gradient.height.cfloat)
+    ImpellerDisplayListBuilderDrawRect(builder, addr rect, paintView)
+  finally:
+    ImpellerColorSourceRelease(grView)
+    ImpellerPaintRelease(paintView)
 
 proc setColor*(paint: ImpellerPaint, color: ColorRGBA) =
   ## Sets the color of the given paint object using a ColorRGBA value.
@@ -205,13 +198,43 @@ proc setColor*(paint: ImpellerPaint, color: ImpellerColor) =
 proc drawRect*(builder: ImpellerDisplayListBuilder, rect: RectShape, color: ColorRGBA) =
   ## Draws a rectangle with the given color.
   let paint = ImpellerPaintNew()
-  paint.setColor(color)
-  ImpellerDisplayListBuilderDrawRect(builder, addr rect, paint)
-  ImpellerPaintRelease(paint)
+  try:
+    paint.setColor(color)
+    ImpellerDisplayListBuilderDrawRect(builder, addr rect, paint)
+  finally:
+    ImpellerPaintRelease(paint)
 
 proc drawRect*(builder: ImpellerDisplayListBuilder, rect: RectShape, color: string) =
   ## Draws a rectangle with the given hex color string.
   let paint = ImpellerPaintNew()
-  paint.setColor(color)
-  ImpellerDisplayListBuilderDrawRect(builder, addr rect, paint)
-  ImpellerPaintRelease(paint)
+  try:
+    paint.setColor(color)
+    ImpellerDisplayListBuilderDrawRect(builder, addr rect, paint)
+  finally:
+    ImpellerPaintRelease(paint)
+
+proc drawLine*(builder: ImpellerDisplayListBuilder, x0, y0, x1, y1: float32,
+    color: ColorRGBA, width: float32 = 1.0) =
+  ## Convenience: line with solid color + width.
+  let paint = ImpellerPaintNew()
+  try:
+    paint.setColor(color)
+    ImpellerPaintSetDrawStyle(paint, kImpellerDrawStyleStroke)
+    ImpellerPaintSetStrokeWidth(paint, width.cfloat)
+    ImpellerPaintSetStrokeCap(paint, kImpellerStrokeCapRound)
+    var a = ImpellerPoint(x: x0.cfloat, y: y0.cfloat)
+    var b = ImpellerPoint(x: x1.cfloat, y: y1.cfloat)
+    ImpellerDisplayListBuilderDrawLine(builder, addr a, addr b, paint)
+  finally:
+    ImpellerPaintRelease(paint)
+
+proc drawOval*(builder: ImpellerDisplayListBuilder, cx, cy, rx, ry: float32,
+    color: ColorRGBA) =
+  let paint = ImpellerPaintNew()
+  try:
+    paint.setColor(color)
+    var oval = ImpellerRect(x: (cx - rx).cfloat, y: (cy - ry).cfloat,
+      width: (rx * 2).cfloat, height: (ry * 2).cfloat)
+    ImpellerDisplayListBuilderDrawOval(builder, addr oval, paint)
+  finally:
+    ImpellerPaintRelease(paint)

@@ -9,7 +9,14 @@ import pkg/chroma
 
 import ./bindings/impeller_api
 
-## High-level API for text, typography, font sizes, and text colors.
+## High-level API for working with text in the Impeller rendering engine, including
+## typography contexts, text styles, and paragraph layout and drawing:
+## 
+## - TypographyContext for managing fonts and text layout
+## - TextStyle for defining the appearance of text
+## - Paragraph for representing laid out text ready to be drawn
+## - Alignment, direction, and decoration options for rich text styling
+## - Utility functions for converting between our types and Impeller's types
 
 type
   FontWeight* = ImpellerFontWeight
@@ -50,12 +57,25 @@ proc newTypographyContext*(): TypographyContext =
   ## Creates a new typography context.
   TypographyContext(handle: ImpellerTypographyContextNew())
 
-proc registerFont*(ctx: var TypographyContext, fontData: seq[byte], family: string): bool =
+proc registerFont*(ctx: var TypographyContext, fontData: openArray[byte], family: string): bool =
   ## Registers a font from memory for use in this context.
-  var mapping: ImpellerMapping
-  mapping.data = cast[ptr uint8](unsafeAddr fontData[0])
-  mapping.length = uint64(fontData.len)
-  mapping.on_release = nil
+  ## `fontData` must be non-empty. Impeller copies the data synchronously.
+  if fontData.len == 0:
+    return false
+  var mapping = ImpellerMapping(
+    data: cast[ptr uint8](unsafeAddr fontData[0]),
+    length: uint64(fontData.len),
+    on_release: nil)
+  ImpellerTypographyContextRegisterFont(ctx.handle, addr mapping, nil, family)
+
+proc registerFontFile*(ctx: var TypographyContext, path, family: string): bool =
+  ## Convenience: loads a font file and registers it.
+  let bytes = readFile(path)
+  if bytes.len == 0: return false
+  var mapping = ImpellerMapping(
+    data: cast[ptr uint8](unsafeAddr bytes[0]),
+    length: uint64(bytes.len),
+    on_release: nil)
   ImpellerTypographyContextRegisterFont(ctx.handle, addr mapping, nil, family)
 
 proc toImpellerColor(c: ColorRGBA): ImpellerColor =
@@ -80,8 +100,37 @@ proc toImpellerFontWeight(weight: FontWeight): ImpellerFontWeight =
 proc toImpellerFontStyle(style: FontStyle): ImpellerFontStyle =
   style
 
-proc toImpellerTextDecoration(dec: ImpellerTextDecoration): ptr ImpellerTextDecoration =
-  addr dec
+proc applyStyle(ps: ImpellerParagraphStyle, style: TextStyle,
+    foregroundPaint, backgroundPaint: var ImpellerPaint,
+    decorationStorage: var ImpellerTextDecoration,
+    hasDecoration: var bool) =
+  ## Applies a TextStyle to a native paragraph style. `decorationStorage`
+  ## must outlive the paragraph build (pass a caller-owned var).
+  foregroundPaint = ImpellerPaintNew()
+  var impColor = toImpellerColor(style.color)
+  ImpellerPaintSetColor(foregroundPaint, addr impColor)
+  ImpellerParagraphStyleSetForeground(ps, foregroundPaint)
+
+  backgroundPaint = nil
+  if style.background.isSome:
+    backgroundPaint = ImpellerPaintNew()
+    var bgColor = toImpellerColor(style.background.get)
+    ImpellerPaintSetColor(backgroundPaint, addr bgColor)
+    ImpellerParagraphStyleSetBackground(ps, backgroundPaint)
+
+  ImpellerParagraphStyleSetFontFamily(ps, cstring(style.fontFamily))
+  ImpellerParagraphStyleSetFontSize(ps, style.fontSize)
+  ImpellerParagraphStyleSetFontWeight(ps, style.fontWeight)
+  ImpellerParagraphStyleSetFontStyle(ps, style.fontStyle)
+
+  if style.align != kImpellerTextAlignmentLeft:
+    ImpellerParagraphStyleSetTextAlignment(ps, style.align)
+  ImpellerParagraphStyleSetTextDirection(ps, style.direction)
+
+  hasDecoration = style.decoration.isSome
+  if hasDecoration:
+    decorationStorage = style.decoration.get
+    ImpellerParagraphStyleSetTextDecoration(ps, addr decorationStorage)
 
 proc newTextStyle*(
     fontFamily: string = "sans-serif",
@@ -107,41 +156,27 @@ proc newTextStyle*(
     decoration: decoration
   )
 
-proc toParagraphStyle(style: TextStyle, foregroundPaint, backgroundPaint: var ImpellerPaint): ImpellerParagraphStyle =
+proc toParagraphStyle(style: TextStyle, foregroundPaint, backgroundPaint: var ImpellerPaint,
+    decorationStorage: var ImpellerTextDecoration,
+    hasDecoration: var bool): ImpellerParagraphStyle =
   # Generate the ImpellerParagraphStyle from the TextStyle, creating ImpellerPaints
-  # for foreground and background colors as needed
-  let ps = ImpellerParagraphStyleNew()
+  # for foreground and background colors as needed. Decoration storage must
+  # outlive the paragraph build, hence caller-owned.
+  result = ImpellerParagraphStyleNew()
+  applyStyle(result, style, foregroundPaint, backgroundPaint,
+    decorationStorage, hasDecoration)
 
-  # Foreground color (keep alive until paragraph is built)
-  foregroundPaint = ImpellerPaintNew()
-  let impColor = toImpellerColor(style.color)
-  ImpellerPaintSetColor(foregroundPaint, addr impColor)
-  ImpellerParagraphStyleSetForeground(ps, foregroundPaint)
+proc setMaxLines*(ps: ImpellerParagraphStyle, n: uint32) {.inline.} =
+  ImpellerParagraphStyleSetMaxLines(ps, n)
 
-  # Background color (keep alive until paragraph is built)
-  backgroundPaint = nil
-  if style.background.isSome:
-    backgroundPaint = ImpellerPaintNew()
-    let bgColor = toImpellerColor(style.background.get)
-    ImpellerPaintSetColor(backgroundPaint, addr bgColor)
-    ImpellerParagraphStyleSetBackground(ps, backgroundPaint)
+proc setHeight*(ps: ImpellerParagraphStyle, h: float32) {.inline.} =
+  ImpellerParagraphStyleSetHeight(ps, h)
 
-  # Font family, size, weight, style
-  ImpellerParagraphStyleSetFontFamily(ps, cstring(style.fontFamily))
-  ImpellerParagraphStyleSetFontSize(ps, style.fontSize)
-  ImpellerParagraphStyleSetFontWeight(ps, style.fontWeight)
-  ImpellerParagraphStyleSetFontStyle(ps, style.fontStyle)
+proc setLocale*(ps: ImpellerParagraphStyle, locale: string) {.inline.} =
+  ImpellerParagraphStyleSetLocale(ps, cstring(locale))
 
-  if style.align != kImpellerTextAlignmentLeft:
-    ImpellerParagraphStyleSetTextAlignment(ps, style.align)
-
-  ImpellerParagraphStyleSetTextDirection(ps, style.direction)
-
-  if style.decoration.isSome:
-    var dec = style.decoration.get
-    ImpellerParagraphStyleSetTextDecoration(ps, addr dec)
-
-  ps
+proc setEllipsis*(ps: ImpellerParagraphStyle, ellipsis: string) {.inline.} =
+  ImpellerParagraphStyleSetEllipsis(ps, cstring(ellipsis))
 
 proc layoutParagraph*(ctx: TypographyContext, text: string, style: TextStyle, width: float32): Paragraph =
   ## Lays out a paragraph of text with the given style and width.
@@ -149,23 +184,67 @@ proc layoutParagraph*(ctx: TypographyContext, text: string, style: TextStyle, wi
 
   var fgPaint: ImpellerPaint = nil
   var bgPaint: ImpellerPaint = nil
-  let ps = style.toParagraphStyle(fgPaint, bgPaint)
+  var decStorage: ImpellerTextDecoration
+  var hasDec = false
+  let ps = style.toParagraphStyle(fgPaint, bgPaint, decStorage, hasDec)
 
-  ImpellerParagraphBuilderPushStyle(builder, ps)
-  ImpellerParagraphBuilderAddText(builder, cast[ptr uint8](text.cstring), uint32(text.len))
+  try:
+    ImpellerParagraphBuilderPushStyle(builder, ps)
+    if text.len > 0:
+      ImpellerParagraphBuilderAddText(builder,
+        cast[ptr uint8](unsafeAddr text[0]), uint32(text.len))
+    let para = ImpellerParagraphBuilderBuildParagraphNew(builder, width)
+    ImpellerParagraphBuilderPopStyle(builder)
+    result = Paragraph(handle: para)
+  finally:
+    if bgPaint != nil: ImpellerPaintRelease(bgPaint)
+    if fgPaint != nil: ImpellerPaintRelease(fgPaint)
+    ImpellerParagraphStyleRelease(ps)
+    ImpellerParagraphBuilderRelease(builder)
 
-  let para = ImpellerParagraphBuilderBuildParagraphNew(builder, width)
-  ImpellerParagraphBuilderPopStyle(builder)
+type
+  StyledSpan* = tuple[text: string, style: TextStyle]
+    ## One run of text with its own style, for rich paragraphs.
 
-  # Release after build
-  if bgPaint != nil:
-    ImpellerPaintRelease(bgPaint)
-  if fgPaint != nil:
-    ImpellerPaintRelease(fgPaint)
-
-  ImpellerParagraphStyleRelease(ps)
-  ImpellerParagraphBuilderRelease(builder)
-  result = Paragraph(handle: para)
+proc layoutRichParagraph*(ctx: TypographyContext,
+    spans: openArray[StyledSpan], width: float32,
+    maxLines: uint32 = 0, ellipsis: string = ""): Paragraph =
+  ## Lays out a multi-style paragraph. Each span pushes its style, adds
+  ## text, then pops. `maxLines`/`ellipsis` apply to the whole paragraph
+  ## via an extra base style... kept simple: applied per-span is a no-op,
+  ## so we set them on the first span's native style when present.
+  let builder = ImpellerParagraphBuilderNew(ctx.handle)
+  var paints: seq[ImpellerPaint] = @[]
+  var styles: seq[ImpellerParagraphStyle] = @[]
+  # Decoration storages must outlive the build: one per span.
+  var decStorages = newSeq[ImpellerTextDecoration](spans.len)
+  var hasDecs = newSeq[bool](spans.len)
+  try:
+    for i, span in spans:
+      var fg, bg: ImpellerPaint = nil
+      let ps = span.style.toParagraphStyle(fg, bg, decStorages[i], hasDecs[i])
+      if maxLines > 0 and i == 0:
+        ImpellerParagraphStyleSetMaxLines(ps, maxLines)
+      if ellipsis.len > 0 and i == 0:
+        ImpellerParagraphStyleSetEllipsis(ps, cstring(ellipsis))
+      styles.add(ps)
+      if fg != nil: paints.add(fg)
+      if bg != nil: paints.add(bg)
+      ImpellerParagraphBuilderPushStyle(builder, ps)
+      if span.text.len > 0:
+        ImpellerParagraphBuilderAddText(builder,
+          cast[ptr uint8](unsafeAddr spans[i].text[0]),
+          uint32(span.text.len))
+    let para = ImpellerParagraphBuilderBuildParagraphNew(builder, width)
+    for _ in spans:
+      ImpellerParagraphBuilderPopStyle(builder)
+    result = Paragraph(handle: para)
+  finally:
+    for p in paints:
+      if p != nil: ImpellerPaintRelease(p)
+    for s in styles:
+      ImpellerParagraphStyleRelease(s)
+    ImpellerParagraphBuilderRelease(builder)
 
 proc getWidth*(p: Paragraph): float32 =
   ## Returns the max width of the paragraph.
@@ -175,8 +254,25 @@ proc getHeight*(p: Paragraph): float32 =
   ## Returns the height of the paragraph.
   ImpellerParagraphGetHeight(p.handle).float32
 
+proc getLongestLineWidth*(p: Paragraph): float32 {.inline.} =
+  ImpellerParagraphGetLongestLineWidth(p.handle).float32
+
+proc getMinIntrinsicWidth*(p: Paragraph): float32 {.inline.} =
+  ImpellerParagraphGetMinIntrinsicWidth(p.handle).float32
+
+proc getMaxIntrinsicWidth*(p: Paragraph): float32 {.inline.} =
+  ImpellerParagraphGetMaxIntrinsicWidth(p.handle).float32
+
+proc getLineCount*(p: Paragraph): uint32 {.inline.} =
+  ImpellerParagraphGetLineCount(p.handle)
+
+proc getWordBoundary*(p: Paragraph, index: int): tuple[first, last: uint64] =
+  var r: ImpellerRange
+  ImpellerParagraphGetWordBoundary(p.handle, index.csize_t, addr r)
+  (r.start, r.`end`)
+
 proc drawParagraph*(builder: ImpellerDisplayListBuilder,
-    para: Paragraph, x, y: float32 = 0) =
+    para: Paragraph, x: float32 = 0, y: float32 = 0) =
   ## Draws the paragraph at the given position.
   var pt = ImpellerPoint(x: x, y: y)
   ImpellerDisplayListBuilderDrawParagraph(builder, para.handle, addr pt)
