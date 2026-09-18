@@ -1,0 +1,19 @@
+nimTitle	texture	impeller/texture.html	module impeller/texture		0
+nim	Texture	impeller/texture.html#Texture	object Texture		5
+nim	FragmentProgram	impeller/texture.html#FragmentProgram	object FragmentProgram		7
+nim	`=destroy`	impeller/texture.html#=destroy,Texture	proc `=destroy`(t: Texture)		10
+nim	`=copy`	impeller/texture.html#=copy,Texture,Texture	proc `=copy`(dst: var Texture; src: Texture)		12
+nim	`=destroy`	impeller/texture.html#=destroy,FragmentProgram	proc `=destroy`(f: FragmentProgram)		13
+nim	`=copy`	impeller/texture.html#=copy,FragmentProgram,FragmentProgram	proc `=copy`(dst: var FragmentProgram; src: FragmentProgram)		15
+nim	isNil	impeller/texture.html#isNil,Texture	proc isNil(t: Texture): bool		17
+nim	isNil	impeller/texture.html#isNil,FragmentProgram	proc isNil(f: FragmentProgram): bool		18
+nim	retain	impeller/texture.html#retain,Texture	proc retain(t: Texture): Texture		20
+nim	newTextureWithContents	impeller/texture.html#newTextureWithContents,ImpellerContext,int64,int64,openArray[uint8],ImpellerPixelFormat,uint32	proc newTextureWithContents(ctx: ImpellerContext; w, h: int64;\n                       pixels: openArray[uint8]; format: ImpellerPixelFormat = kImpellerPixelFormatRGBA8888;\n                       mipCount: uint32 = 1): Texture		24
+nim	newTextureFromGLHandle	impeller/texture.html#newTextureFromGLHandle,ImpellerContext,uint64,int64,int64,ImpellerPixelFormat	proc newTextureFromGLHandle(ctx: ImpellerContext; glHandle: uint64; w, h: int64;\n    format: ImpellerPixelFormat = kImpellerPixelFormatRGBA8888): Texture		41
+nim	glHandle	impeller/texture.html#glHandle,Texture	proc glHandle(t: Texture): uint64		51
+nim	solidTexture	impeller/texture.html#solidTexture,ImpellerContext,uint8,uint8,uint8,uint8,int64,int64	proc solidTexture(ctx: ImpellerContext; r, g, b, a: uint8; w: int64 = 1; h: int64 = 1): Texture		54
+nim	newFragmentProgram	impeller/texture.html#newFragmentProgram,openArray[byte]	proc newFragmentProgram(spirv: openArray[byte]): FragmentProgram		68
+nim	loadFragmentProgram	impeller/texture.html#loadFragmentProgram,string	proc loadFragmentProgram(path: string): FragmentProgram		75
+nimgrp	=destroy	impeller/texture.html#=destroy-procs-all	proc		10
+nimgrp	=copy	impeller/texture.html#=copy-procs-all	proc		12
+nimgrp	isnil	impeller/texture.html#isNil-procs-all	proc		17

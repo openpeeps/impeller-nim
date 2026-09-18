@@ -16,10 +16,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.10">
+<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.12">
 
 <!-- JS -->
-<script type="text/javascript" src="../../dochack.js?v=2.2.10"></script>
+<script type="text/javascript" src="../../dochack.js?v=2.2.12"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -184,6 +184,19 @@
 <li><a class="reference" href="#ImpellerVulkanProcAddressCallback" title="ImpellerVulkanProcAddressCallback = proc (vulkan_instance: pointer;
     vulkan_proc_name: cstring; user_data: pointer): pointer {.cdecl.}">ImpellerVulkanProcAddressCallback</a></li>
 <li><a class="reference" href="#ImpellerVulkanSwapchain" title="ImpellerVulkanSwapchain = pointer">ImpellerVulkanSwapchain</a></li>
+
+    </ul>
+  </details>
+</li>
+<li>
+  <details open>
+    <summary><a class="reference reference-toplevel" href="#10" id="60">Consts</a></summary>
+    <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#ImpellerVersion" title="ImpellerVersion = 541081600'u32">ImpellerVersion</a></li>
+<li><a class="reference" href="#ImpellerVersionMajor" title="ImpellerVersionMajor = 1'u32">ImpellerVersionMajor</a></li>
+<li><a class="reference" href="#ImpellerVersionMinor" title="ImpellerVersionMinor = 4'u32">ImpellerVersionMinor</a></li>
+<li><a class="reference" href="#ImpellerVersionPatch" title="ImpellerVersionPatch = 0'u32">ImpellerVersionPatch</a></li>
+<li><a class="reference" href="#ImpellerVersionVariant" title="ImpellerVersionVariant = 1'u32">ImpellerVersionVariant</a></li>
 
     </ul>
   </details>
@@ -700,6 +713,10 @@
   <li><a class="reference" href="#ImpellerLineMetricsRetain%2CImpellerLineMetrics" title="ImpellerLineMetricsRetain(line_metrics: ImpellerLineMetrics)">ImpellerLineMetricsRetain(line_metrics: ImpellerLineMetrics)</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">impellerMakeVersion
+  <li><a class="reference" href="#impellerMakeVersion%2Cuint32%2Cuint32%2Cuint32%2Cuint32" title="impellerMakeVersion(variant, major, minor, patch: uint32): uint32">impellerMakeVersion(variant, major, minor, patch: uint32): uint32</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">ImpellerMaskFilterCreateBlurNew
   <li><a class="reference" href="#ImpellerMaskFilterCreateBlurNew%2CImpellerBlurStyle%2Ccfloat" title="ImpellerMaskFilterCreateBlurNew(style: ImpellerBlurStyle; sigma: cfloat): ImpellerMaskFilter">ImpellerMaskFilterCreateBlurNew(style: ImpellerBlurStyle; sigma: cfloat): ImpellerMaskFilter</a></li>
 
@@ -1138,6 +1155,22 @@
 </ul>
 <ul class="simple nested-toc-section">ImpellerTypographyContextRetain
   <li><a class="reference" href="#ImpellerTypographyContextRetain%2CImpellerTypographyContext" title="ImpellerTypographyContextRetain(context: ImpellerTypographyContext)">ImpellerTypographyContextRetain(context: ImpellerTypographyContext)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">impellerVersionGetMajor
+  <li><a class="reference" href="#impellerVersionGetMajor%2Cuint32" title="impellerVersionGetMajor(version: uint32): uint32">impellerVersionGetMajor(version: uint32): uint32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">impellerVersionGetMinor
+  <li><a class="reference" href="#impellerVersionGetMinor%2Cuint32" title="impellerVersionGetMinor(version: uint32): uint32">impellerVersionGetMinor(version: uint32): uint32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">impellerVersionGetPatch
+  <li><a class="reference" href="#impellerVersionGetPatch%2Cuint32" title="impellerVersionGetPatch(version: uint32): uint32">impellerVersionGetPatch(version: uint32): uint32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">impellerVersionGetVariant
+  <li><a class="reference" href="#impellerVersionGetVariant%2Cuint32" title="impellerVersionGetVariant(version: uint32): uint32">impellerVersionGetVariant(version: uint32): uint32</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">ImpellerVulkanSwapchainAcquireNextSurfaceNew
@@ -1674,6 +1707,52 @@
 </div>
 <div id="ImpellerVulkanSwapchain">
   <dt><pre><a href="#ImpellerVulkanSwapchain"><span class="Identifier">ImpellerVulkanSwapchain</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+  </dl>
+</div>
+<div class="section" id="10">
+  <h1><a class="toc-backref" href="#10">Consts</a></h1>
+  <dl class="item">
+    <div id="ImpellerVersion">
+  <dt><pre><a href="#ImpellerVersion"><span class="Identifier">ImpellerVersion</span></a> <span class="Other">=</span> <span class="DecNumber">541081600'u32</span></pre></dt>
+  <dd>
+    
+    The current Impeller API version. Pass to context constructors.
+    
+  </dd>
+</div>
+<div id="ImpellerVersionMajor">
+  <dt><pre><a href="#ImpellerVersionMajor"><span class="Identifier">ImpellerVersionMajor</span></a> <span class="Other">=</span> <span class="DecNumber">1'u32</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="ImpellerVersionMinor">
+  <dt><pre><a href="#ImpellerVersionMinor"><span class="Identifier">ImpellerVersionMinor</span></a> <span class="Other">=</span> <span class="DecNumber">4'u32</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="ImpellerVersionPatch">
+  <dt><pre><a href="#ImpellerVersionPatch"><span class="Identifier">ImpellerVersionPatch</span></a> <span class="Other">=</span> <span class="DecNumber">0'u32</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="ImpellerVersionVariant">
+  <dt><pre><a href="#ImpellerVersionVariant"><span class="Identifier">ImpellerVersionVariant</span></a> <span class="Other">=</span> <span class="DecNumber">1'u32</span></pre></dt>
   <dd>
     
     
@@ -2801,6 +2880,18 @@
 </div>
 
 </div>
+<div id="impellerMakeVersion-procs-all">
+  <div id="impellerMakeVersion,uint32,uint32,uint32,uint32">
+  <dt><pre><span class="Keyword">func</span> <a href="#impellerMakeVersion%2Cuint32%2Cuint32%2Cuint32%2Cuint32"><span class="Identifier">impellerMakeVersion</span></a><span class="Other">(</span><span class="Identifier">variant</span><span class="Other">,</span> <span class="Identifier">major</span><span class="Other">,</span> <span class="Identifier">minor</span><span class="Other">,</span> <span class="Identifier">patch</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span>
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Packs a version in a uint32, mirroring IMPELLER_MAKE_VERSION.
+    
+  </dd>
+</div>
+
+</div>
 <div id="ImpellerMaskFilterCreateBlurNew-procs-all">
   <div id="ImpellerMaskFilterCreateBlurNew,ImpellerBlurStyle,cfloat">
   <dt><pre><span class="Keyword">proc</span> <a href="#ImpellerMaskFilterCreateBlurNew%2CImpellerBlurStyle%2Ccfloat"><span class="Identifier">ImpellerMaskFilterCreateBlurNew</span></a><span class="Other">(</span><span class="Identifier">style</span><span class="Other">:</span> <a href="#ImpellerBlurStyle"><span class="Identifier">ImpellerBlurStyle</span></a><span class="Other">;</span> <span class="Identifier">sigma</span><span class="Other">:</span> <span class="Identifier">cfloat</span><span class="Other">)</span><span class="Other">:</span> <a href="#ImpellerMaskFilter"><span class="Identifier">ImpellerMaskFilter</span></a> {.
@@ -3881,6 +3972,54 @@
 </div>
 
 </div>
+<div id="impellerVersionGetMajor-procs-all">
+  <div id="impellerVersionGetMajor,uint32">
+  <dt><pre><span class="Keyword">func</span> <a href="#impellerVersionGetMajor%2Cuint32"><span class="Identifier">impellerVersionGetMajor</span></a><span class="Other">(</span><span class="Identifier">version</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="impellerVersionGetMinor-procs-all">
+  <div id="impellerVersionGetMinor,uint32">
+  <dt><pre><span class="Keyword">func</span> <a href="#impellerVersionGetMinor%2Cuint32"><span class="Identifier">impellerVersionGetMinor</span></a><span class="Other">(</span><span class="Identifier">version</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="impellerVersionGetPatch-procs-all">
+  <div id="impellerVersionGetPatch,uint32">
+  <dt><pre><span class="Keyword">func</span> <a href="#impellerVersionGetPatch%2Cuint32"><span class="Identifier">impellerVersionGetPatch</span></a><span class="Other">(</span><span class="Identifier">version</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="impellerVersionGetVariant-procs-all">
+  <div id="impellerVersionGetVariant,uint32">
+  <dt><pre><span class="Keyword">func</span> <a href="#impellerVersionGetVariant%2Cuint32"><span class="Identifier">impellerVersionGetVariant</span></a><span class="Other">(</span><span class="Identifier">version</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
 <div id="ImpellerVulkanSwapchainAcquireNextSurfaceNew-procs-all">
   <div id="ImpellerVulkanSwapchainAcquireNextSurfaceNew,ImpellerVulkanSwapchain">
   <dt><pre><span class="Keyword">proc</span> <a href="#ImpellerVulkanSwapchainAcquireNextSurfaceNew%2CImpellerVulkanSwapchain"><span class="Identifier">ImpellerVulkanSwapchainAcquireNextSurfaceNew</span></a><span class="Other">(</span>
@@ -3941,7 +4080,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-07-07 18:01:31 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-09-18 17:25:45 UTC</small>
       </div>
     </div>
   </div>

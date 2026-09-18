@@ -1,0 +1,13 @@
+nimTitle	context	impeller/context.html	module impeller/context		0
+nim	Context	impeller/context.html#Context	object Context		20
+nim	`=destroy`	impeller/context.html#=destroy,Context	proc `=destroy`(c: Context)		24
+nim	`=copy`	impeller/context.html#=copy,Context,Context	proc `=copy`(dst: var Context; src: Context)		28
+nim	isNil	impeller/context.html#isNil,Context	proc isNil(c: Context): bool		30
+nim	getVersion	impeller/context.html#getVersion	proc getVersion(): uint32		33
+nim	createOpenGLES	impeller/context.html#createOpenGLES,ImpellerProcAddressCallback,pointer,uint32	proc createOpenGLES(glProcAddress: ImpellerProcAddressCallback;\n               userData: pointer = nil; version: uint32 = ImpellerVersion): Context		37
+nim	createMetal	impeller/context.html#createMetal,uint32	proc createMetal(version: uint32 = ImpellerVersion): Context		46
+nim	createVulkan	impeller/context.html#createVulkan,ImpellerContextVulkanSettings,uint32	proc createVulkan(settings: var ImpellerContextVulkanSettings;\n             version: uint32 = ImpellerVersion): Context		50
+nim	getVulkanInfo	impeller/context.html#getVulkanInfo,Context,ImpellerContextVulkanInfo	proc getVulkanInfo(c: Context; info: var ImpellerContextVulkanInfo): bool		55
+nim	glfwProcLoader	impeller/context.html#glfwProcLoader,cstring,pointer	proc glfwProcLoader(procName: cstring; userData: pointer): pointer		60
+nim	createOpenGLESWithGlfw	impeller/context.html#createOpenGLESWithGlfw,uint32	proc createOpenGLESWithGlfw(version: uint32 = ImpellerVersion): Context		65
+nim	withContext	impeller/context.html#withContext.t,untyped,Context,untyped	template withContext(name: untyped; ctx: Context; body: untyped)		72

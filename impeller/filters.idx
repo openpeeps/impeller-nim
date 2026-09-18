@@ -1,0 +1,26 @@
+nimTitle	filters	impeller/filters.html	module impeller/filters		0
+nim	ColorFilter	impeller/filters.html#ColorFilter	object ColorFilter		8
+nim	ImageFilter	impeller/filters.html#ImageFilter	object ImageFilter		10
+nim	MaskFilter	impeller/filters.html#MaskFilter	object MaskFilter		12
+nim	`=destroy`	impeller/filters.html#=destroy,ColorFilter	proc `=destroy`(f: ColorFilter)		15
+nim	`=copy`	impeller/filters.html#=copy,ColorFilter,ColorFilter	proc `=copy`(dst: var ColorFilter; src: ColorFilter)		17
+nim	`=destroy`	impeller/filters.html#=destroy,ImageFilter	proc `=destroy`(f: ImageFilter)		18
+nim	`=copy`	impeller/filters.html#=copy,ImageFilter,ImageFilter	proc `=copy`(dst: var ImageFilter; src: ImageFilter)		20
+nim	`=destroy`	impeller/filters.html#=destroy,MaskFilter	proc `=destroy`(f: MaskFilter)		21
+nim	`=copy`	impeller/filters.html#=copy,MaskFilter,MaskFilter	proc `=copy`(dst: var MaskFilter; src: MaskFilter)		23
+nim	isNil	impeller/filters.html#isNil,ColorFilter	proc isNil(f: ColorFilter): bool		25
+nim	isNil	impeller/filters.html#isNil,ImageFilter	proc isNil(f: ImageFilter): bool		26
+nim	isNil	impeller/filters.html#isNil,MaskFilter	proc isNil(f: MaskFilter): bool		27
+nim	blendColorFilter	impeller/filters.html#blendColorFilter,ImpellerColor,ImpellerBlendMode	proc blendColorFilter(color: var ImpellerColor; mode: ImpellerBlendMode): ColorFilter		31
+nim	colorMatrixFilter	impeller/filters.html#colorMatrixFilter,ImpellerColorMatrix	proc colorMatrixFilter(m: var ImpellerColorMatrix): ColorFilter		35
+nim	grayscaleColorMatrix	impeller/filters.html#grayscaleColorMatrix	proc grayscaleColorMatrix(): ImpellerColorMatrix		38
+nim	invertColorMatrix	impeller/filters.html#invertColorMatrix	proc invertColorMatrix(): ImpellerColorMatrix		46
+nim	blurMaskFilter	impeller/filters.html#blurMaskFilter,ImpellerBlurStyle,float32	proc blurMaskFilter(style: ImpellerBlurStyle; sigma: float32): MaskFilter		56
+nim	blurImageFilter	impeller/filters.html#blurImageFilter,float32,float32,ImpellerTileMode	proc blurImageFilter(sx, sy: float32; tile: ImpellerTileMode = kImpellerTileModeClamp): ImageFilter		61
+nim	dilateImageFilter	impeller/filters.html#dilateImageFilter,float32,float32	proc dilateImageFilter(rx, ry: float32): ImageFilter		66
+nim	erodeImageFilter	impeller/filters.html#erodeImageFilter,float32,float32	proc erodeImageFilter(rx, ry: float32): ImageFilter		69
+nim	matrixImageFilter	impeller/filters.html#matrixImageFilter,ImpellerMatrix,ImpellerTextureSampling	proc matrixImageFilter(m: var ImpellerMatrix; sampling: ImpellerTextureSampling = kImpellerTextureSamplingLinear): ImageFilter		72
+nim	composeImageFilter	impeller/filters.html#composeImageFilter,ImageFilter,ImageFilter	proc composeImageFilter(outer, inner: ImageFilter): ImageFilter		76
+nimgrp	=destroy	impeller/filters.html#=destroy-procs-all	proc		15
+nimgrp	=copy	impeller/filters.html#=copy-procs-all	proc		17
+nimgrp	isnil	impeller/filters.html#isNil-procs-all	proc		25

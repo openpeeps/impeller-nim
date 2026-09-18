@@ -1,0 +1,24 @@
+nimTitle	paint	impeller/paint.html	module impeller/paint		0
+nim	Paint	impeller/paint.html#Paint	object Paint		14
+nim	`=destroy`	impeller/paint.html#=destroy,Paint	proc `=destroy`(p: Paint)		18
+nim	`=copy`	impeller/paint.html#=copy,Paint,Paint	proc `=copy`(dst: var Paint; src: Paint)		22
+nim	newPaint	impeller/paint.html#newPaint	proc newPaint(): Paint		24
+nim	retain	impeller/paint.html#retain,Paint	proc retain(p: Paint): Paint		28
+nim	isNil	impeller/paint.html#isNil,Paint	proc isNil(p: Paint): bool		34
+nim	toImpellerColor	impeller/paint.html#toImpellerColor,ColorRGBA	proc toImpellerColor(c: ColorRGBA): ImpellerColor		39
+nim	setColor	impeller/paint.html#setColor,Paint,ImpellerColor	proc setColor(p: Paint; color: ImpellerColor)		48
+nim	setColor	impeller/paint.html#setColor,Paint,ColorRGBA	proc setColor(p: Paint; color: ColorRGBA)		51
+nim	setColor	impeller/paint.html#setColor,Paint,string	proc setColor(p: Paint; color: string)		55
+nim	setColor	impeller/paint.html#setColor,Paint,range[],range[],range[],range[]	proc setColor(p: Paint; r, g, b: range[0 .. 255]; a: range[0 .. 255] = 255)		59
+nim	setBlendMode	impeller/paint.html#setBlendMode,Paint,ImpellerBlendMode	proc setBlendMode(p: Paint; mode: ImpellerBlendMode)		64
+nim	setDrawStyle	impeller/paint.html#setDrawStyle,Paint,ImpellerDrawStyle	proc setDrawStyle(p: Paint; style: ImpellerDrawStyle)		67
+nim	setStrokeCap	impeller/paint.html#setStrokeCap,Paint,ImpellerStrokeCap	proc setStrokeCap(p: Paint; cap: ImpellerStrokeCap)		70
+nim	setStrokeJoin	impeller/paint.html#setStrokeJoin,Paint,ImpellerStrokeJoin	proc setStrokeJoin(p: Paint; join: ImpellerStrokeJoin)		73
+nim	setStrokeWidth	impeller/paint.html#setStrokeWidth,Paint,float32	proc setStrokeWidth(p: Paint; width: float32)		76
+nim	setStrokeMiter	impeller/paint.html#setStrokeMiter,Paint,float32	proc setStrokeMiter(p: Paint; miter: float32)		79
+nim	setColorFilter	impeller/paint.html#setColorFilter,Paint,ImpellerColorFilter	proc setColorFilter(p: Paint; filter: ImpellerColorFilter)		84
+nim	setColorSource	impeller/paint.html#setColorSource,Paint,ImpellerColorSource	proc setColorSource(p: Paint; source: ImpellerColorSource)		87
+nim	setImageFilter	impeller/paint.html#setImageFilter,Paint,ImpellerImageFilter	proc setImageFilter(p: Paint; filter: ImpellerImageFilter)		90
+nim	setMaskFilter	impeller/paint.html#setMaskFilter,Paint,ImpellerMaskFilter	proc setMaskFilter(p: Paint; filter: ImpellerMaskFilter)		93
+nim	withPaint	impeller/paint.html#withPaint.t,untyped,untyped	template withPaint(name: untyped; body: untyped)		96
+nimgrp	setcolor	impeller/paint.html#setColor-procs-all	proc		48

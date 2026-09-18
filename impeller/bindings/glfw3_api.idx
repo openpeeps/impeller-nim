@@ -1,0 +1,211 @@
+nimTitle	glfw3_api	impeller/bindings/glfw3_api.html	module impeller/bindings/glfw3_api		0
+nim	GLFW_TRUE	impeller/bindings/glfw3_api.html#GLFW_TRUE	const GLFW_TRUE		2
+nim	GLFW_FALSE	impeller/bindings/glfw3_api.html#GLFW_FALSE	const GLFW_FALSE		3
+nim	GLFW_RELEASE	impeller/bindings/glfw3_api.html#GLFW_RELEASE	const GLFW_RELEASE		4
+nim	GLFW_PRESS	impeller/bindings/glfw3_api.html#GLFW_PRESS	const GLFW_PRESS		5
+nim	GLFW_REPEAT	impeller/bindings/glfw3_api.html#GLFW_REPEAT	const GLFW_REPEAT		6
+nim	GLFW_KEY_UNKNOWN	impeller/bindings/glfw3_api.html#GLFW_KEY_UNKNOWN	const GLFW_KEY_UNKNOWN		8
+nim	GLFW_KEY_SPACE	impeller/bindings/glfw3_api.html#GLFW_KEY_SPACE	const GLFW_KEY_SPACE		9
+nim	GLFW_KEY_APOSTROPHE	impeller/bindings/glfw3_api.html#GLFW_KEY_APOSTROPHE	const GLFW_KEY_APOSTROPHE		10
+nim	GLFW_KEY_COMMA	impeller/bindings/glfw3_api.html#GLFW_KEY_COMMA	const GLFW_KEY_COMMA		11
+nim	GLFW_KEY_MINUS	impeller/bindings/glfw3_api.html#GLFW_KEY_MINUS	const GLFW_KEY_MINUS		12
+nim	GLFW_KEY_PERIOD	impeller/bindings/glfw3_api.html#GLFW_KEY_PERIOD	const GLFW_KEY_PERIOD		13
+nim	GLFW_KEY_SLASH	impeller/bindings/glfw3_api.html#GLFW_KEY_SLASH	const GLFW_KEY_SLASH		14
+nim	GLFW_KEY_0	impeller/bindings/glfw3_api.html#GLFW_KEY_0	const GLFW_KEY_0		15
+nim	GLFW_KEY_1	impeller/bindings/glfw3_api.html#GLFW_KEY_1	const GLFW_KEY_1		16
+nim	GLFW_KEY_2	impeller/bindings/glfw3_api.html#GLFW_KEY_2	const GLFW_KEY_2		17
+nim	GLFW_KEY_3	impeller/bindings/glfw3_api.html#GLFW_KEY_3	const GLFW_KEY_3		18
+nim	GLFW_KEY_4	impeller/bindings/glfw3_api.html#GLFW_KEY_4	const GLFW_KEY_4		19
+nim	GLFW_KEY_5	impeller/bindings/glfw3_api.html#GLFW_KEY_5	const GLFW_KEY_5		20
+nim	GLFW_KEY_6	impeller/bindings/glfw3_api.html#GLFW_KEY_6	const GLFW_KEY_6		21
+nim	GLFW_KEY_7	impeller/bindings/glfw3_api.html#GLFW_KEY_7	const GLFW_KEY_7		22
+nim	GLFW_KEY_8	impeller/bindings/glfw3_api.html#GLFW_KEY_8	const GLFW_KEY_8		23
+nim	GLFW_KEY_9	impeller/bindings/glfw3_api.html#GLFW_KEY_9	const GLFW_KEY_9		24
+nim	GLFW_KEY_SEMICOLON	impeller/bindings/glfw3_api.html#GLFW_KEY_SEMICOLON	const GLFW_KEY_SEMICOLON		25
+nim	GLFW_KEY_EQUAL	impeller/bindings/glfw3_api.html#GLFW_KEY_EQUAL	const GLFW_KEY_EQUAL		26
+nim	GLFW_KEY_A	impeller/bindings/glfw3_api.html#GLFW_KEY_A	const GLFW_KEY_A		27
+nim	GLFW_KEY_B	impeller/bindings/glfw3_api.html#GLFW_KEY_B	const GLFW_KEY_B		28
+nim	GLFW_KEY_C	impeller/bindings/glfw3_api.html#GLFW_KEY_C	const GLFW_KEY_C		29
+nim	GLFW_KEY_D	impeller/bindings/glfw3_api.html#GLFW_KEY_D	const GLFW_KEY_D		30
+nim	GLFW_KEY_E	impeller/bindings/glfw3_api.html#GLFW_KEY_E	const GLFW_KEY_E		31
+nim	GLFW_KEY_F	impeller/bindings/glfw3_api.html#GLFW_KEY_F	const GLFW_KEY_F		32
+nim	GLFW_KEY_G	impeller/bindings/glfw3_api.html#GLFW_KEY_G	const GLFW_KEY_G		33
+nim	GLFW_KEY_H	impeller/bindings/glfw3_api.html#GLFW_KEY_H	const GLFW_KEY_H		34
+nim	GLFW_KEY_I	impeller/bindings/glfw3_api.html#GLFW_KEY_I	const GLFW_KEY_I		35
+nim	GLFW_KEY_J	impeller/bindings/glfw3_api.html#GLFW_KEY_J	const GLFW_KEY_J		36
+nim	GLFW_KEY_K	impeller/bindings/glfw3_api.html#GLFW_KEY_K	const GLFW_KEY_K		37
+nim	GLFW_KEY_L	impeller/bindings/glfw3_api.html#GLFW_KEY_L	const GLFW_KEY_L		38
+nim	GLFW_KEY_M	impeller/bindings/glfw3_api.html#GLFW_KEY_M	const GLFW_KEY_M		39
+nim	GLFW_KEY_N	impeller/bindings/glfw3_api.html#GLFW_KEY_N	const GLFW_KEY_N		40
+nim	GLFW_KEY_O	impeller/bindings/glfw3_api.html#GLFW_KEY_O	const GLFW_KEY_O		41
+nim	GLFW_KEY_P	impeller/bindings/glfw3_api.html#GLFW_KEY_P	const GLFW_KEY_P		42
+nim	GLFW_KEY_Q	impeller/bindings/glfw3_api.html#GLFW_KEY_Q	const GLFW_KEY_Q		43
+nim	GLFW_KEY_R	impeller/bindings/glfw3_api.html#GLFW_KEY_R	const GLFW_KEY_R		44
+nim	GLFW_KEY_S	impeller/bindings/glfw3_api.html#GLFW_KEY_S	const GLFW_KEY_S		45
+nim	GLFW_KEY_T	impeller/bindings/glfw3_api.html#GLFW_KEY_T	const GLFW_KEY_T		46
+nim	GLFW_KEY_U	impeller/bindings/glfw3_api.html#GLFW_KEY_U	const GLFW_KEY_U		47
+nim	GLFW_KEY_V	impeller/bindings/glfw3_api.html#GLFW_KEY_V	const GLFW_KEY_V		48
+nim	GLFW_KEY_W	impeller/bindings/glfw3_api.html#GLFW_KEY_W	const GLFW_KEY_W		49
+nim	GLFW_KEY_X	impeller/bindings/glfw3_api.html#GLFW_KEY_X	const GLFW_KEY_X		50
+nim	GLFW_KEY_Y	impeller/bindings/glfw3_api.html#GLFW_KEY_Y	const GLFW_KEY_Y		51
+nim	GLFW_KEY_Z	impeller/bindings/glfw3_api.html#GLFW_KEY_Z	const GLFW_KEY_Z		52
+nim	GLFW_KEY_ESCAPE	impeller/bindings/glfw3_api.html#GLFW_KEY_ESCAPE	const GLFW_KEY_ESCAPE		53
+nim	GLFW_KEY_ENTER	impeller/bindings/glfw3_api.html#GLFW_KEY_ENTER	const GLFW_KEY_ENTER		54
+nim	GLFW_KEY_TAB	impeller/bindings/glfw3_api.html#GLFW_KEY_TAB	const GLFW_KEY_TAB		55
+nim	GLFW_KEY_BACKSPACE	impeller/bindings/glfw3_api.html#GLFW_KEY_BACKSPACE	const GLFW_KEY_BACKSPACE		56
+nim	GLFW_KEY_INSERT	impeller/bindings/glfw3_api.html#GLFW_KEY_INSERT	const GLFW_KEY_INSERT		57
+nim	GLFW_KEY_DELETE	impeller/bindings/glfw3_api.html#GLFW_KEY_DELETE	const GLFW_KEY_DELETE		58
+nim	GLFW_KEY_RIGHT	impeller/bindings/glfw3_api.html#GLFW_KEY_RIGHT	const GLFW_KEY_RIGHT		59
+nim	GLFW_KEY_LEFT	impeller/bindings/glfw3_api.html#GLFW_KEY_LEFT	const GLFW_KEY_LEFT		60
+nim	GLFW_KEY_DOWN	impeller/bindings/glfw3_api.html#GLFW_KEY_DOWN	const GLFW_KEY_DOWN		61
+nim	GLFW_KEY_UP	impeller/bindings/glfw3_api.html#GLFW_KEY_UP	const GLFW_KEY_UP		62
+nim	GLFWmonitor	impeller/bindings/glfw3_api.html#GLFWmonitor	object GLFWmonitor		67
+nim	GLFWwindow	impeller/bindings/glfw3_api.html#GLFWwindow	object GLFWwindow		68
+nim	GLFWcursor	impeller/bindings/glfw3_api.html#GLFWcursor	object GLFWcursor		69
+nim	GLFWvidmode	impeller/bindings/glfw3_api.html#GLFWvidmode	object GLFWvidmode		71
+nim	GLFWgammaramp	impeller/bindings/glfw3_api.html#GLFWgammaramp	object GLFWgammaramp		79
+nim	GLFWimage	impeller/bindings/glfw3_api.html#GLFWimage	object GLFWimage		85
+nim	GLFWgamepadstate	impeller/bindings/glfw3_api.html#GLFWgamepadstate	object GLFWgamepadstate		90
+nim	GLFWallocator	impeller/bindings/glfw3_api.html#GLFWallocator	object GLFWallocator		94
+nim	glfwInit	impeller/bindings/glfw3_api.html#glfwInit	proc glfwInit(): cint		100
+nim	glfwTerminate	impeller/bindings/glfw3_api.html#glfwTerminate	proc glfwTerminate()		101
+nim	glfwInitHint	impeller/bindings/glfw3_api.html#glfwInitHint,cint,cint	proc glfwInitHint(hint, value: cint)		102
+nim	glfwInitAllocator	impeller/bindings/glfw3_api.html#glfwInitAllocator,ptr.GLFWallocator	proc glfwInitAllocator(allocator: ptr GLFWallocator)		103
+nim	glfwInitVulkanLoader	impeller/bindings/glfw3_api.html#glfwInitVulkanLoader,pointer	proc glfwInitVulkanLoader(loader: pointer)		104
+nim	glfwGetVersion	impeller/bindings/glfw3_api.html#glfwGetVersion,ptr.cint,ptr.cint,ptr.cint	proc glfwGetVersion(major, minor, rev: ptr cint)		105
+nim	glfwGetVersionString	impeller/bindings/glfw3_api.html#glfwGetVersionString	proc glfwGetVersionString(): cstring		106
+nim	glfwGetError	impeller/bindings/glfw3_api.html#glfwGetError,ptr.cstring	proc glfwGetError(description: ptr cstring): cint		107
+nim	GLFWerrorfun	impeller/bindings/glfw3_api.html#GLFWerrorfun	type GLFWerrorfun		109
+nim	glfwSetErrorCallback	impeller/bindings/glfw3_api.html#glfwSetErrorCallback,GLFWerrorfun	proc glfwSetErrorCallback(callback: GLFWerrorfun): GLFWerrorfun		110
+nim	glfwGetPlatform	impeller/bindings/glfw3_api.html#glfwGetPlatform	proc glfwGetPlatform(): cint		112
+nim	glfwPlatformSupported	impeller/bindings/glfw3_api.html#glfwPlatformSupported,cint	proc glfwPlatformSupported(platform: cint): cint		113
+nim	glfwGetMonitors	impeller/bindings/glfw3_api.html#glfwGetMonitors,ptr.cint	proc glfwGetMonitors(count: ptr cint): ptr ptr GLFWmonitor		115
+nim	glfwGetPrimaryMonitor	impeller/bindings/glfw3_api.html#glfwGetPrimaryMonitor	proc glfwGetPrimaryMonitor(): ptr GLFWmonitor		116
+nim	glfwGetMonitorPos	impeller/bindings/glfw3_api.html#glfwGetMonitorPos,ptr.GLFWmonitor,ptr.cint,ptr.cint	proc glfwGetMonitorPos(monitor: ptr GLFWmonitor; xpos, ypos: ptr cint)		117
+nim	glfwGetMonitorWorkarea	impeller/bindings/glfw3_api.html#glfwGetMonitorWorkarea,ptr.GLFWmonitor,ptr.cint,ptr.cint,ptr.cint,ptr.cint	proc glfwGetMonitorWorkarea(monitor: ptr GLFWmonitor;\n                       xpos, ypos, width, height: ptr cint)		118
+nim	glfwGetMonitorPhysicalSize	impeller/bindings/glfw3_api.html#glfwGetMonitorPhysicalSize,ptr.GLFWmonitor,ptr.cint,ptr.cint	proc glfwGetMonitorPhysicalSize(monitor: ptr GLFWmonitor; widthMM, heightMM: ptr cint)		119
+nim	glfwGetMonitorContentScale	impeller/bindings/glfw3_api.html#glfwGetMonitorContentScale,ptr.GLFWmonitor,ptr.cfloat,ptr.cfloat	proc glfwGetMonitorContentScale(monitor: ptr GLFWmonitor; xscale, yscale: ptr cfloat)		120
+nim	glfwGetMonitorName	impeller/bindings/glfw3_api.html#glfwGetMonitorName,ptr.GLFWmonitor	proc glfwGetMonitorName(monitor: ptr GLFWmonitor): cstring		121
+nim	glfwSetMonitorUserPointer	impeller/bindings/glfw3_api.html#glfwSetMonitorUserPointer,ptr.GLFWmonitor,pointer	proc glfwSetMonitorUserPointer(monitor: ptr GLFWmonitor; pointer: pointer)		122
+nim	glfwGetMonitorUserPointer	impeller/bindings/glfw3_api.html#glfwGetMonitorUserPointer,ptr.GLFWmonitor	proc glfwGetMonitorUserPointer(monitor: ptr GLFWmonitor): pointer		123
+nim	GLFWmonitorfun	impeller/bindings/glfw3_api.html#GLFWmonitorfun	type GLFWmonitorfun		125
+nim	glfwSetMonitorCallback	impeller/bindings/glfw3_api.html#glfwSetMonitorCallback,GLFWmonitorfun	proc glfwSetMonitorCallback(callback: GLFWmonitorfun): GLFWmonitorfun		126
+nim	glfwGetVideoModes	impeller/bindings/glfw3_api.html#glfwGetVideoModes,ptr.GLFWmonitor,ptr.cint	proc glfwGetVideoModes(monitor: ptr GLFWmonitor; count: ptr cint): ptr GLFWvidmode		128
+nim	glfwGetVideoMode	impeller/bindings/glfw3_api.html#glfwGetVideoMode,ptr.GLFWmonitor	proc glfwGetVideoMode(monitor: ptr GLFWmonitor): ptr GLFWvidmode		129
+nim	glfwSetGamma	impeller/bindings/glfw3_api.html#glfwSetGamma,ptr.GLFWmonitor,cfloat	proc glfwSetGamma(monitor: ptr GLFWmonitor; gamma: cfloat)		130
+nim	glfwGetGammaRamp	impeller/bindings/glfw3_api.html#glfwGetGammaRamp,ptr.GLFWmonitor	proc glfwGetGammaRamp(monitor: ptr GLFWmonitor): ptr GLFWgammaramp		131
+nim	glfwSetGammaRamp	impeller/bindings/glfw3_api.html#glfwSetGammaRamp,ptr.GLFWmonitor,ptr.GLFWgammaramp	proc glfwSetGammaRamp(monitor: ptr GLFWmonitor; ramp: ptr GLFWgammaramp)		132
+nim	glfwDefaultWindowHints	impeller/bindings/glfw3_api.html#glfwDefaultWindowHints	proc glfwDefaultWindowHints()		134
+nim	glfwWindowHint	impeller/bindings/glfw3_api.html#glfwWindowHint,cint,cint	proc glfwWindowHint(hint, value: cint)		135
+nim	glfwWindowHintString	impeller/bindings/glfw3_api.html#glfwWindowHintString,cint,cstring	proc glfwWindowHintString(hint: cint; value: cstring)		136
+nim	glfwSetWindowIcon	impeller/bindings/glfw3_api.html#glfwSetWindowIcon,ptr.GLFWwindow,cint,ptr.GLFWimage	proc glfwSetWindowIcon(window: ptr GLFWwindow; count: cint; images: ptr GLFWimage)		137
+nim	glfwGetWindowPos	impeller/bindings/glfw3_api.html#glfwGetWindowPos,ptr.GLFWwindow,ptr.cint,ptr.cint	proc glfwGetWindowPos(window: ptr GLFWwindow; xpos, ypos: ptr cint)		138
+nim	glfwSetWindowPos	impeller/bindings/glfw3_api.html#glfwSetWindowPos,ptr.GLFWwindow,cint,cint	proc glfwSetWindowPos(window: ptr GLFWwindow; xpos, ypos: cint)		139
+nim	glfwGetWindowTitle	impeller/bindings/glfw3_api.html#glfwGetWindowTitle,ptr.GLFWwindow	proc glfwGetWindowTitle(window: ptr GLFWwindow): cstring		140
+nim	glfwCreateWindow	impeller/bindings/glfw3_api.html#glfwCreateWindow,cint,cint,cstring,ptr.GLFWmonitor,ptr.GLFWwindow	proc glfwCreateWindow(width, height: cint; title: cstring; monitor: ptr GLFWmonitor;\n                 share: ptr GLFWwindow): ptr GLFWwindow		142
+nim	glfwDestroyWindow	impeller/bindings/glfw3_api.html#glfwDestroyWindow,ptr.GLFWwindow	proc glfwDestroyWindow(window: ptr GLFWwindow)		143
+nim	glfwWindowShouldClose	impeller/bindings/glfw3_api.html#glfwWindowShouldClose,ptr.GLFWwindow	proc glfwWindowShouldClose(window: ptr GLFWwindow): cint		144
+nim	glfwSetWindowShouldClose	impeller/bindings/glfw3_api.html#glfwSetWindowShouldClose,ptr.GLFWwindow,cint	proc glfwSetWindowShouldClose(window: ptr GLFWwindow; value: cint)		145
+nim	glfwPollEvents	impeller/bindings/glfw3_api.html#glfwPollEvents	proc glfwPollEvents()		146
+nim	glfwWaitEvents	impeller/bindings/glfw3_api.html#glfwWaitEvents	proc glfwWaitEvents()		147
+nim	glfwSwapBuffers	impeller/bindings/glfw3_api.html#glfwSwapBuffers,ptr.GLFWwindow	proc glfwSwapBuffers(window: ptr GLFWwindow)		148
+nim	glfwMakeContextCurrent	impeller/bindings/glfw3_api.html#glfwMakeContextCurrent,ptr.GLFWwindow	proc glfwMakeContextCurrent(window: ptr GLFWwindow)		149
+nim	glfwGetCurrentContext	impeller/bindings/glfw3_api.html#glfwGetCurrentContext	proc glfwGetCurrentContext(): ptr GLFWwindow		150
+nim	glfwSwapInterval	impeller/bindings/glfw3_api.html#glfwSwapInterval,cint	proc glfwSwapInterval(interval: cint)		151
+nim	glfwGetKey	impeller/bindings/glfw3_api.html#glfwGetKey,ptr.GLFWwindow,cint	proc glfwGetKey(window: ptr GLFWwindow; key: cint): cint		152
+nim	glfwGetMouseButton	impeller/bindings/glfw3_api.html#glfwGetMouseButton,ptr.GLFWwindow,cint	proc glfwGetMouseButton(window: ptr GLFWwindow; button: cint): cint		153
+nim	glfwGetCursorPos	impeller/bindings/glfw3_api.html#glfwGetCursorPos,ptr.GLFWwindow,ptr.cdouble,ptr.cdouble	proc glfwGetCursorPos(window: ptr GLFWwindow; xpos, ypos: ptr cdouble)		154
+nim	glfwSetCursorPos	impeller/bindings/glfw3_api.html#glfwSetCursorPos,ptr.GLFWwindow,cdouble,cdouble	proc glfwSetCursorPos(window: ptr GLFWwindow; xpos, ypos: cdouble)		155
+nim	glfwSetWindowTitle	impeller/bindings/glfw3_api.html#glfwSetWindowTitle,ptr.GLFWwindow,cstring	proc glfwSetWindowTitle(window: ptr GLFWwindow; title: cstring)		156
+nim	glfwSetWindowSize	impeller/bindings/glfw3_api.html#glfwSetWindowSize,ptr.GLFWwindow,cint,cint	proc glfwSetWindowSize(window: ptr GLFWwindow; width, height: cint)		157
+nim	glfwGetWindowSize	impeller/bindings/glfw3_api.html#glfwGetWindowSize,ptr.GLFWwindow,ptr.cint,ptr.cint	proc glfwGetWindowSize(window: ptr GLFWwindow; width, height: ptr cint)		158
+nim	glfwSetWindowSizeLimits	impeller/bindings/glfw3_api.html#glfwSetWindowSizeLimits,ptr.GLFWwindow,cint,cint,cint,cint	proc glfwSetWindowSizeLimits(window: ptr GLFWwindow;\n                        minwidth, minheight, maxwidth, maxheight: cint)		160
+nim	glfwSetWindowAspectRatio	impeller/bindings/glfw3_api.html#glfwSetWindowAspectRatio,ptr.GLFWwindow,cint,cint	proc glfwSetWindowAspectRatio(window: ptr GLFWwindow; numer, denom: cint)		161
+nim	glfwGetFramebufferSize	impeller/bindings/glfw3_api.html#glfwGetFramebufferSize,ptr.GLFWwindow,ptr.cint,ptr.cint	proc glfwGetFramebufferSize(window: ptr GLFWwindow; width, height: ptr cint)		162
+nim	glfwGetWindowFrameSize	impeller/bindings/glfw3_api.html#glfwGetWindowFrameSize,ptr.GLFWwindow,ptr.cint,ptr.cint,ptr.cint,ptr.cint	proc glfwGetWindowFrameSize(window: ptr GLFWwindow;\n                       left, top, right, bottom: ptr cint)		163
+nim	glfwGetWindowContentScale	impeller/bindings/glfw3_api.html#glfwGetWindowContentScale,ptr.GLFWwindow,ptr.cfloat,ptr.cfloat	proc glfwGetWindowContentScale(window: ptr GLFWwindow; xscale, yscale: ptr cfloat)		164
+nim	glfwGetWindowOpacity	impeller/bindings/glfw3_api.html#glfwGetWindowOpacity,ptr.GLFWwindow	proc glfwGetWindowOpacity(window: ptr GLFWwindow): cfloat		165
+nim	glfwSetWindowOpacity	impeller/bindings/glfw3_api.html#glfwSetWindowOpacity,ptr.GLFWwindow,cfloat	proc glfwSetWindowOpacity(window: ptr GLFWwindow; opacity: cfloat)		166
+nim	glfwIconifyWindow	impeller/bindings/glfw3_api.html#glfwIconifyWindow,ptr.GLFWwindow	proc glfwIconifyWindow(window: ptr GLFWwindow)		167
+nim	glfwRestoreWindow	impeller/bindings/glfw3_api.html#glfwRestoreWindow,ptr.GLFWwindow	proc glfwRestoreWindow(window: ptr GLFWwindow)		168
+nim	glfwMaximizeWindow	impeller/bindings/glfw3_api.html#glfwMaximizeWindow,ptr.GLFWwindow	proc glfwMaximizeWindow(window: ptr GLFWwindow)		169
+nim	glfwShowWindow	impeller/bindings/glfw3_api.html#glfwShowWindow,ptr.GLFWwindow	proc glfwShowWindow(window: ptr GLFWwindow)		170
+nim	glfwHideWindow	impeller/bindings/glfw3_api.html#glfwHideWindow,ptr.GLFWwindow	proc glfwHideWindow(window: ptr GLFWwindow)		171
+nim	glfwFocusWindow	impeller/bindings/glfw3_api.html#glfwFocusWindow,ptr.GLFWwindow	proc glfwFocusWindow(window: ptr GLFWwindow)		172
+nim	glfwRequestWindowAttention	impeller/bindings/glfw3_api.html#glfwRequestWindowAttention,ptr.GLFWwindow	proc glfwRequestWindowAttention(window: ptr GLFWwindow)		173
+nim	glfwGetWindowMonitor	impeller/bindings/glfw3_api.html#glfwGetWindowMonitor,ptr.GLFWwindow	proc glfwGetWindowMonitor(window: ptr GLFWwindow): ptr GLFWmonitor		174
+nim	glfwSetWindowMonitor	impeller/bindings/glfw3_api.html#glfwSetWindowMonitor,ptr.GLFWwindow,ptr.GLFWmonitor,cint,cint,cint,cint,cint	proc glfwSetWindowMonitor(window: ptr GLFWwindow; monitor: ptr GLFWmonitor;\n                     xpos, ypos, width, height, refreshRate: cint)		175
+nim	glfwGetWindowAttrib	impeller/bindings/glfw3_api.html#glfwGetWindowAttrib,ptr.GLFWwindow,cint	proc glfwGetWindowAttrib(window: ptr GLFWwindow; attrib: cint): cint		176
+nim	glfwSetWindowAttrib	impeller/bindings/glfw3_api.html#glfwSetWindowAttrib,ptr.GLFWwindow,cint,cint	proc glfwSetWindowAttrib(window: ptr GLFWwindow; attrib, value: cint)		177
+nim	glfwSetWindowUserPointer	impeller/bindings/glfw3_api.html#glfwSetWindowUserPointer,ptr.GLFWwindow,pointer	proc glfwSetWindowUserPointer(window: ptr GLFWwindow; pointer: pointer)		178
+nim	glfwGetWindowUserPointer	impeller/bindings/glfw3_api.html#glfwGetWindowUserPointer,ptr.GLFWwindow	proc glfwGetWindowUserPointer(window: ptr GLFWwindow): pointer		179
+nim	GLFWwindowposfun	impeller/bindings/glfw3_api.html#GLFWwindowposfun	type GLFWwindowposfun		183
+nim	GLFWwindowsizefun	impeller/bindings/glfw3_api.html#GLFWwindowsizefun	type GLFWwindowsizefun		184
+nim	GLFWwindowclosefun	impeller/bindings/glfw3_api.html#GLFWwindowclosefun	type GLFWwindowclosefun		185
+nim	GLFWwindowrefreshfun	impeller/bindings/glfw3_api.html#GLFWwindowrefreshfun	type GLFWwindowrefreshfun		186
+nim	GLFWwindowfocusfun	impeller/bindings/glfw3_api.html#GLFWwindowfocusfun	type GLFWwindowfocusfun		187
+nim	GLFWwindowiconifyfun	impeller/bindings/glfw3_api.html#GLFWwindowiconifyfun	type GLFWwindowiconifyfun		188
+nim	GLFWwindowmaximizefun	impeller/bindings/glfw3_api.html#GLFWwindowmaximizefun	type GLFWwindowmaximizefun		189
+nim	GLFWframebuffersizefun	impeller/bindings/glfw3_api.html#GLFWframebuffersizefun	type GLFWframebuffersizefun		190
+nim	GLFWwindowcontentscalefun	impeller/bindings/glfw3_api.html#GLFWwindowcontentscalefun	type GLFWwindowcontentscalefun		191
+nim	glfwSetWindowPosCallback	impeller/bindings/glfw3_api.html#glfwSetWindowPosCallback,ptr.GLFWwindow,GLFWwindowposfun	proc glfwSetWindowPosCallback(window: ptr GLFWwindow; callback: GLFWwindowposfun): GLFWwindowposfun		193
+nim	glfwSetWindowSizeCallback	impeller/bindings/glfw3_api.html#glfwSetWindowSizeCallback,ptr.GLFWwindow,GLFWwindowsizefun	proc glfwSetWindowSizeCallback(window: ptr GLFWwindow; callback: GLFWwindowsizefun): GLFWwindowsizefun		194
+nim	glfwSetWindowCloseCallback	impeller/bindings/glfw3_api.html#glfwSetWindowCloseCallback,ptr.GLFWwindow,GLFWwindowclosefun	proc glfwSetWindowCloseCallback(window: ptr GLFWwindow; callback: GLFWwindowclosefun): GLFWwindowclosefun		195
+nim	glfwSetWindowRefreshCallback	impeller/bindings/glfw3_api.html#glfwSetWindowRefreshCallback,ptr.GLFWwindow,GLFWwindowrefreshfun	proc glfwSetWindowRefreshCallback(window: ptr GLFWwindow;\n                             callback: GLFWwindowrefreshfun): GLFWwindowrefreshfun		196
+nim	glfwSetWindowFocusCallback	impeller/bindings/glfw3_api.html#glfwSetWindowFocusCallback,ptr.GLFWwindow,GLFWwindowfocusfun	proc glfwSetWindowFocusCallback(window: ptr GLFWwindow; callback: GLFWwindowfocusfun): GLFWwindowfocusfun		197
+nim	glfwSetWindowIconifyCallback	impeller/bindings/glfw3_api.html#glfwSetWindowIconifyCallback,ptr.GLFWwindow,GLFWwindowiconifyfun	proc glfwSetWindowIconifyCallback(window: ptr GLFWwindow;\n                             callback: GLFWwindowiconifyfun): GLFWwindowiconifyfun		198
+nim	glfwSetWindowMaximizeCallback	impeller/bindings/glfw3_api.html#glfwSetWindowMaximizeCallback,ptr.GLFWwindow,GLFWwindowmaximizefun	proc glfwSetWindowMaximizeCallback(window: ptr GLFWwindow;\n                              callback: GLFWwindowmaximizefun): GLFWwindowmaximizefun		199
+nim	glfwSetFramebufferSizeCallback	impeller/bindings/glfw3_api.html#glfwSetFramebufferSizeCallback,ptr.GLFWwindow,GLFWframebuffersizefun	proc glfwSetFramebufferSizeCallback(window: ptr GLFWwindow;\n                               callback: GLFWframebuffersizefun): GLFWframebuffersizefun		200
+nim	glfwSetWindowContentScaleCallback	impeller/bindings/glfw3_api.html#glfwSetWindowContentScaleCallback,ptr.GLFWwindow,GLFWwindowcontentscalefun	proc glfwSetWindowContentScaleCallback(window: ptr GLFWwindow;\n                                  callback: GLFWwindowcontentscalefun): GLFWwindowcontentscalefun		201
+nim	glfwWaitEventsTimeout	impeller/bindings/glfw3_api.html#glfwWaitEventsTimeout,cdouble	proc glfwWaitEventsTimeout(timeout: cdouble)		203
+nim	glfwPostEmptyEvent	impeller/bindings/glfw3_api.html#glfwPostEmptyEvent	proc glfwPostEmptyEvent()		204
+nim	glfwGetInputMode	impeller/bindings/glfw3_api.html#glfwGetInputMode,ptr.GLFWwindow,cint	proc glfwGetInputMode(window: ptr GLFWwindow; mode: cint): cint		205
+nim	glfwSetInputMode	impeller/bindings/glfw3_api.html#glfwSetInputMode,ptr.GLFWwindow,cint,cint	proc glfwSetInputMode(window: ptr GLFWwindow; mode, value: cint)		206
+nim	glfwRawMouseMotionSupported	impeller/bindings/glfw3_api.html#glfwRawMouseMotionSupported	proc glfwRawMouseMotionSupported(): cint		207
+nim	glfwGetKeyName	impeller/bindings/glfw3_api.html#glfwGetKeyName,cint,cint	proc glfwGetKeyName(key, scancode: cint): cstring		208
+nim	glfwGetKeyScancode	impeller/bindings/glfw3_api.html#glfwGetKeyScancode,cint	proc glfwGetKeyScancode(key: cint): cint		209
+nim	glfwCreateCursor	impeller/bindings/glfw3_api.html#glfwCreateCursor,ptr.GLFWimage,cint,cint	proc glfwCreateCursor(image: ptr GLFWimage; xhot, yhot: cint): ptr GLFWcursor		211
+nim	glfwCreateStandardCursor	impeller/bindings/glfw3_api.html#glfwCreateStandardCursor,cint	proc glfwCreateStandardCursor(shape: cint): ptr GLFWcursor		212
+nim	glfwDestroyCursor	impeller/bindings/glfw3_api.html#glfwDestroyCursor,ptr.GLFWcursor	proc glfwDestroyCursor(cursor: ptr GLFWcursor)		213
+nim	glfwSetCursor	impeller/bindings/glfw3_api.html#glfwSetCursor,ptr.GLFWwindow,ptr.GLFWcursor	proc glfwSetCursor(window: ptr GLFWwindow; cursor: ptr GLFWcursor)		214
+nim	GLFWkeyfun	impeller/bindings/glfw3_api.html#GLFWkeyfun	type GLFWkeyfun		218
+nim	GLFWcharfun	impeller/bindings/glfw3_api.html#GLFWcharfun	type GLFWcharfun		219
+nim	GLFWcharmodsfun	impeller/bindings/glfw3_api.html#GLFWcharmodsfun	type GLFWcharmodsfun		220
+nim	GLFWmousebuttonfun	impeller/bindings/glfw3_api.html#GLFWmousebuttonfun	type GLFWmousebuttonfun		221
+nim	GLFWcursorposfun	impeller/bindings/glfw3_api.html#GLFWcursorposfun	type GLFWcursorposfun		222
+nim	GLFWcursorenterfun	impeller/bindings/glfw3_api.html#GLFWcursorenterfun	type GLFWcursorenterfun		223
+nim	GLFWscrollfun	impeller/bindings/glfw3_api.html#GLFWscrollfun	type GLFWscrollfun		224
+nim	GLFWdropfun	impeller/bindings/glfw3_api.html#GLFWdropfun	type GLFWdropfun		225
+nim	glfwSetKeyCallback	impeller/bindings/glfw3_api.html#glfwSetKeyCallback,ptr.GLFWwindow,GLFWkeyfun	proc glfwSetKeyCallback(window: ptr GLFWwindow; callback: GLFWkeyfun): GLFWkeyfun		227
+nim	glfwSetCharCallback	impeller/bindings/glfw3_api.html#glfwSetCharCallback,ptr.GLFWwindow,GLFWcharfun	proc glfwSetCharCallback(window: ptr GLFWwindow; callback: GLFWcharfun): GLFWcharfun		228
+nim	glfwSetCharModsCallback	impeller/bindings/glfw3_api.html#glfwSetCharModsCallback,ptr.GLFWwindow,GLFWcharmodsfun	proc glfwSetCharModsCallback(window: ptr GLFWwindow; callback: GLFWcharmodsfun): GLFWcharmodsfun		229
+nim	glfwSetMouseButtonCallback	impeller/bindings/glfw3_api.html#glfwSetMouseButtonCallback,ptr.GLFWwindow,GLFWmousebuttonfun	proc glfwSetMouseButtonCallback(window: ptr GLFWwindow; callback: GLFWmousebuttonfun): GLFWmousebuttonfun		230
+nim	glfwSetCursorPosCallback	impeller/bindings/glfw3_api.html#glfwSetCursorPosCallback,ptr.GLFWwindow,GLFWcursorposfun	proc glfwSetCursorPosCallback(window: ptr GLFWwindow; callback: GLFWcursorposfun): GLFWcursorposfun		231
+nim	glfwSetCursorEnterCallback	impeller/bindings/glfw3_api.html#glfwSetCursorEnterCallback,ptr.GLFWwindow,GLFWcursorenterfun	proc glfwSetCursorEnterCallback(window: ptr GLFWwindow; callback: GLFWcursorenterfun): GLFWcursorenterfun		232
+nim	glfwSetScrollCallback	impeller/bindings/glfw3_api.html#glfwSetScrollCallback,ptr.GLFWwindow,GLFWscrollfun	proc glfwSetScrollCallback(window: ptr GLFWwindow; callback: GLFWscrollfun): GLFWscrollfun		233
+nim	glfwSetDropCallback	impeller/bindings/glfw3_api.html#glfwSetDropCallback,ptr.GLFWwindow,GLFWdropfun	proc glfwSetDropCallback(window: ptr GLFWwindow; callback: GLFWdropfun): GLFWdropfun		234
+nim	glfwJoystickPresent	impeller/bindings/glfw3_api.html#glfwJoystickPresent,cint	proc glfwJoystickPresent(jid: cint): cint		236
+nim	glfwGetJoystickAxes	impeller/bindings/glfw3_api.html#glfwGetJoystickAxes,cint,ptr.cint	proc glfwGetJoystickAxes(jid: cint; count: ptr cint): ptr cfloat		237
+nim	glfwGetJoystickButtons	impeller/bindings/glfw3_api.html#glfwGetJoystickButtons,cint,ptr.cint	proc glfwGetJoystickButtons(jid: cint; count: ptr cint): ptr uint8		238
+nim	glfwGetJoystickHats	impeller/bindings/glfw3_api.html#glfwGetJoystickHats,cint,ptr.cint	proc glfwGetJoystickHats(jid: cint; count: ptr cint): ptr uint8		239
+nim	glfwGetJoystickName	impeller/bindings/glfw3_api.html#glfwGetJoystickName,cint	proc glfwGetJoystickName(jid: cint): cstring		240
+nim	glfwGetJoystickGUID	impeller/bindings/glfw3_api.html#glfwGetJoystickGUID,cint	proc glfwGetJoystickGUID(jid: cint): cstring		241
+nim	glfwSetJoystickUserPointer	impeller/bindings/glfw3_api.html#glfwSetJoystickUserPointer,cint,pointer	proc glfwSetJoystickUserPointer(jid: cint; pointer: pointer)		242
+nim	glfwGetJoystickUserPointer	impeller/bindings/glfw3_api.html#glfwGetJoystickUserPointer,cint	proc glfwGetJoystickUserPointer(jid: cint): pointer		243
+nim	glfwJoystickIsGamepad	impeller/bindings/glfw3_api.html#glfwJoystickIsGamepad,cint	proc glfwJoystickIsGamepad(jid: cint): cint		244
+nim	GLFWjoystickfun	impeller/bindings/glfw3_api.html#GLFWjoystickfun	type GLFWjoystickfun		247
+nim	glfwSetJoystickCallback	impeller/bindings/glfw3_api.html#glfwSetJoystickCallback,GLFWjoystickfun	proc glfwSetJoystickCallback(callback: GLFWjoystickfun): GLFWjoystickfun		249
+nim	glfwUpdateGamepadMappings	impeller/bindings/glfw3_api.html#glfwUpdateGamepadMappings,cstring	proc glfwUpdateGamepadMappings(str: cstring): cint		250
+nim	glfwGetGamepadName	impeller/bindings/glfw3_api.html#glfwGetGamepadName,cint	proc glfwGetGamepadName(jid: cint): cstring		251
+nim	glfwGetGamepadState	impeller/bindings/glfw3_api.html#glfwGetGamepadState,cint,ptr.GLFWgamepadstate	proc glfwGetGamepadState(jid: cint; state: ptr GLFWgamepadstate): cint		252
+nim	glfwSetClipboardString	impeller/bindings/glfw3_api.html#glfwSetClipboardString,ptr.GLFWwindow,cstring	proc glfwSetClipboardString(window: ptr GLFWwindow; str: cstring)		254
+nim	glfwGetClipboardString	impeller/bindings/glfw3_api.html#glfwGetClipboardString,ptr.GLFWwindow	proc glfwGetClipboardString(window: ptr GLFWwindow): cstring		255
+nim	glfwGetTime	impeller/bindings/glfw3_api.html#glfwGetTime	proc glfwGetTime(): cdouble		257
+nim	glfwSetTime	impeller/bindings/glfw3_api.html#glfwSetTime,cdouble	proc glfwSetTime(time: cdouble)		258
+nim	glfwGetTimerValue	impeller/bindings/glfw3_api.html#glfwGetTimerValue	proc glfwGetTimerValue(): uint64		259
+nim	glfwGetTimerFrequency	impeller/bindings/glfw3_api.html#glfwGetTimerFrequency	proc glfwGetTimerFrequency(): uint64		260
+nim	glfwExtensionSupported	impeller/bindings/glfw3_api.html#glfwExtensionSupported,cstring	proc glfwExtensionSupported(extension: cstring): cint		262
+nim	GLFWglproc	impeller/bindings/glfw3_api.html#GLFWglproc	type GLFWglproc		263
+nim	glfwGetProcAddress	impeller/bindings/glfw3_api.html#glfwGetProcAddress,cstring	proc glfwGetProcAddress(procname: cstring): GLFWglproc		264
+nim	glfwVulkanSupported	impeller/bindings/glfw3_api.html#glfwVulkanSupported	proc glfwVulkanSupported(): cint		266
+nim	glfwGetRequiredInstanceExtensions	impeller/bindings/glfw3_api.html#glfwGetRequiredInstanceExtensions,ptr.uint32	proc glfwGetRequiredInstanceExtensions(count: ptr uint32): ptr cstring		267

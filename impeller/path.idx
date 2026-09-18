@@ -1,0 +1,33 @@
+nimTitle	path	impeller/path.html	module impeller/path		0
+nim	Path	impeller/path.html#Path	object Path		5
+nim	PathBuilder	impeller/path.html#PathBuilder	object PathBuilder		7
+nim	`=destroy`	impeller/path.html#=destroy,Path	proc `=destroy`(p: Path)		10
+nim	`=copy`	impeller/path.html#=copy,Path,Path	proc `=copy`(dst: var Path; src: Path)		12
+nim	`=destroy`	impeller/path.html#=destroy,PathBuilder	proc `=destroy`(b: PathBuilder)		13
+nim	`=copy`	impeller/path.html#=copy,PathBuilder,PathBuilder	proc `=copy`(dst: var PathBuilder; src: PathBuilder)		15
+nim	isNil	impeller/path.html#isNil,Path	proc isNil(p: Path): bool		17
+nim	isNil	impeller/path.html#isNil,PathBuilder	proc isNil(b: PathBuilder): bool		18
+nim	newPathBuilder	impeller/path.html#newPathBuilder	proc newPathBuilder(): PathBuilder		20
+nim	retain	impeller/path.html#retain,Path	proc retain(p: Path): Path		23
+nim	getBounds	impeller/path.html#getBounds,Path	proc getBounds(p: Path): ImpellerRect		27
+nim	moveTo	impeller/path.html#moveTo,PathBuilder,float32,float32	proc moveTo(b: PathBuilder; x, y: float32)		30
+nim	lineTo	impeller/path.html#lineTo,PathBuilder,float32,float32	proc lineTo(b: PathBuilder; x, y: float32)		34
+nim	quadraticTo	impeller/path.html#quadraticTo,PathBuilder,float32,float32,float32,float32	proc quadraticTo(b: PathBuilder; cx, cy, ex, ey: float32)		38
+nim	cubicTo	impeller/path.html#cubicTo,PathBuilder,float32,float32,float32,float32,float32,float32	proc cubicTo(b: PathBuilder; c1x, c1y, c2x, c2y, ex, ey: float32)		43
+nim	addRect	impeller/path.html#addRect,PathBuilder,ImpellerRect	proc addRect(b: PathBuilder; r: ImpellerRect)		49
+nim	addRect	impeller/path.html#addRect,PathBuilder,float32,float32,float32,float32	proc addRect(b: PathBuilder; x, y, w, h: float32)		53
+nim	addArc	impeller/path.html#addArc,PathBuilder,ImpellerRect,float32,float32	proc addArc(b: PathBuilder; oval: ImpellerRect; startDeg, endDeg: float32)		57
+nim	addOval	impeller/path.html#addOval,PathBuilder,ImpellerRect	proc addOval(b: PathBuilder; oval: ImpellerRect)		61
+nim	addOval	impeller/path.html#addOval,PathBuilder,float32,float32,float32,float32	proc addOval(b: PathBuilder; cx, cy, rx, ry: float32)		65
+nim	addRoundedRect	impeller/path.html#addRoundedRect,PathBuilder,ImpellerRect,ImpellerRoundingRadii	proc addRoundedRect(b: PathBuilder; r: ImpellerRect; radii: ImpellerRoundingRadii)		70
+nim	uniformRadii	impeller/path.html#uniformRadii,float32	proc uniformRadii(radius: float32): ImpellerRoundingRadii		75
+nim	close	impeller/path.html#close,PathBuilder	proc close(b: PathBuilder)		79
+nim	copyPath	impeller/path.html#copyPath,PathBuilder,ImpellerFillType	proc copyPath(b: PathBuilder; fill: ImpellerFillType = kImpellerFillTypeNonZero): Path		82
+nim	takePath	impeller/path.html#takePath,PathBuilder,ImpellerFillType	proc takePath(b: PathBuilder; fill: ImpellerFillType = kImpellerFillTypeNonZero): Path		85
+nim	buildCircle	impeller/path.html#buildCircle,float32,float32,float32	proc buildCircle(cx, cy, r: float32): Path		89
+nim	buildRect	impeller/path.html#buildRect,float32,float32,float32,float32	proc buildRect(x, y, w, h: float32): Path		95
+nimgrp	=destroy	impeller/path.html#=destroy-procs-all	proc		10
+nimgrp	=copy	impeller/path.html#=copy-procs-all	proc		12
+nimgrp	addoval	impeller/path.html#addOval-procs-all	proc		61
+nimgrp	isnil	impeller/path.html#isNil-procs-all	proc		17
+nimgrp	addrect	impeller/path.html#addRect-procs-all	proc		49

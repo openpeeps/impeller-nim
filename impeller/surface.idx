@@ -1,0 +1,20 @@
+nimTitle	surface	impeller/surface.html	module impeller/surface		0
+nim	Surface	impeller/surface.html#Surface	object Surface		8
+nim	VulkanSwapchain	impeller/surface.html#VulkanSwapchain	object VulkanSwapchain		10
+nim	`=destroy`	impeller/surface.html#=destroy,Surface	proc `=destroy`(s: Surface)		13
+nim	`=copy`	impeller/surface.html#=copy,Surface,Surface	proc `=copy`(dst: var Surface; src: Surface)		15
+nim	`=destroy`	impeller/surface.html#=destroy,VulkanSwapchain	proc `=destroy`(s: VulkanSwapchain)		16
+nim	`=copy`	impeller/surface.html#=copy,VulkanSwapchain,VulkanSwapchain	proc `=copy`(dst: var VulkanSwapchain; src: VulkanSwapchain)		18
+nim	isNil	impeller/surface.html#isNil,Surface	proc isNil(s: Surface): bool		20
+nim	isNil	impeller/surface.html#isNil,VulkanSwapchain	proc isNil(s: VulkanSwapchain): bool		21
+nim	retain	impeller/surface.html#retain,Surface	proc retain(s: Surface): Surface		23
+nim	wrapFBO	impeller/surface.html#wrapFBO,ImpellerContext,uint64,ImpellerPixelFormat,int64,int64	proc wrapFBO(ctx: ImpellerContext; fbo: uint64; format: ImpellerPixelFormat;\n        w, h: int64): Surface		27
+nim	wrapMetalDrawable	impeller/surface.html#wrapMetalDrawable,ImpellerContext,pointer	proc wrapMetalDrawable(ctx: ImpellerContext; drawable: pointer): Surface		34
+nim	draw	impeller/surface.html#draw,Surface,DisplayList	proc draw(s: Surface; d: DisplayList): bool		37
+nim	present	impeller/surface.html#present,Surface	proc present(s: Surface): bool		40
+nim	render	impeller/surface.html#render,Surface,DisplayList	proc render(s: Surface; d: DisplayList): bool		43
+nim	newVulkanSwapchain	impeller/surface.html#newVulkanSwapchain,ImpellerContext,pointer	proc newVulkanSwapchain(ctx: ImpellerContext; vkSurface: pointer): VulkanSwapchain		50
+nim	acquireNextSurface	impeller/surface.html#acquireNextSurface,VulkanSwapchain	proc acquireNextSurface(s: VulkanSwapchain): Surface		53
+nimgrp	=destroy	impeller/surface.html#=destroy-procs-all	proc		13
+nimgrp	=copy	impeller/surface.html#=copy-procs-all	proc		15
+nimgrp	isnil	impeller/surface.html#isNil-procs-all	proc		20

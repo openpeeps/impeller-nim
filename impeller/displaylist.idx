@@ -1,0 +1,49 @@
+nimTitle	displaylist	impeller/displaylist.html	module impeller/displaylist		0
+nim	DisplayList	impeller/displaylist.html#DisplayList	object DisplayList		9
+nim	DisplayListBuilder	impeller/displaylist.html#DisplayListBuilder	object DisplayListBuilder		11
+nim	`=destroy`	impeller/displaylist.html#=destroy,DisplayList	proc `=destroy`(d: DisplayList)		14
+nim	`=copy`	impeller/displaylist.html#=copy,DisplayList,DisplayList	proc `=copy`(dst: var DisplayList; src: DisplayList)		16
+nim	`=destroy`	impeller/displaylist.html#=destroy,DisplayListBuilder	proc `=destroy`(b: DisplayListBuilder)		17
+nim	`=copy`	impeller/displaylist.html#=copy,DisplayListBuilder,DisplayListBuilder	proc `=copy`(dst: var DisplayListBuilder; src: DisplayListBuilder)		19
+nim	isNil	impeller/displaylist.html#isNil,DisplayList	proc isNil(d: DisplayList): bool		21
+nim	isNil	impeller/displaylist.html#isNil,DisplayListBuilder	proc isNil(b: DisplayListBuilder): bool		22
+nim	retain	impeller/displaylist.html#retain,DisplayList	proc retain(d: DisplayList): DisplayList		24
+nim	newDisplayListBuilder	impeller/displaylist.html#newDisplayListBuilder,ImpellerRect	proc newDisplayListBuilder(cullRect: var ImpellerRect): DisplayListBuilder		28
+nim	newDisplayListBuilder	impeller/displaylist.html#newDisplayListBuilder,float32,float32,float32,float32	proc newDisplayListBuilder(x, y, w, h: float32): DisplayListBuilder		31
+nim	finish	impeller/displaylist.html#finish,DisplayListBuilder	proc finish(b: DisplayListBuilder): DisplayList		35
+nim	identityMatrix	impeller/displaylist.html#identityMatrix	proc identityMatrix(): ImpellerMatrix		40
+nim	translationMatrix	impeller/displaylist.html#translationMatrix,float32,float32	proc translationMatrix(x, y: float32): ImpellerMatrix		44
+nim	scaleMatrix	impeller/displaylist.html#scaleMatrix,float32,float32	proc scaleMatrix(sx, sy: float32): ImpellerMatrix		49
+nim	save	impeller/displaylist.html#save,DisplayListBuilder	proc save(b: DisplayListBuilder)		56
+nim	saveLayer	impeller/displaylist.html#saveLayer,DisplayListBuilder,ImpellerRect,Paint,ImpellerImageFilter	proc saveLayer(b: DisplayListBuilder; bounds: var ImpellerRect; p: Paint;\n          backdrop: ImpellerImageFilter = nil)		59
+nim	restore	impeller/displaylist.html#restore,DisplayListBuilder	proc restore(b: DisplayListBuilder)		63
+nim	scale	impeller/displaylist.html#scale,DisplayListBuilder,float32,float32	proc scale(b: DisplayListBuilder; sx, sy: float32)		66
+nim	rotate	impeller/displaylist.html#rotate,DisplayListBuilder,float32	proc rotate(b: DisplayListBuilder; degrees: float32)		69
+nim	translate	impeller/displaylist.html#translate,DisplayListBuilder,float32,float32	proc translate(b: DisplayListBuilder; dx, dy: float32)		72
+nim	transform	impeller/displaylist.html#transform,DisplayListBuilder,ImpellerMatrix	proc transform(b: DisplayListBuilder; m: var ImpellerMatrix)		75
+nim	setTransform	impeller/displaylist.html#setTransform,DisplayListBuilder,ImpellerMatrix	proc setTransform(b: DisplayListBuilder; m: var ImpellerMatrix)		78
+nim	getTransform	impeller/displaylist.html#getTransform,DisplayListBuilder	proc getTransform(b: DisplayListBuilder): ImpellerMatrix		81
+nim	resetTransform	impeller/displaylist.html#resetTransform,DisplayListBuilder	proc resetTransform(b: DisplayListBuilder)		84
+nim	getSaveCount	impeller/displaylist.html#getSaveCount,DisplayListBuilder	proc getSaveCount(b: DisplayListBuilder): uint32		87
+nim	restoreToCount	impeller/displaylist.html#restoreToCount,DisplayListBuilder,uint32	proc restoreToCount(b: DisplayListBuilder; count: uint32)		90
+nim	withSave	impeller/displaylist.html#withSave.t,DisplayListBuilder,untyped	template withSave(b: DisplayListBuilder; body: untyped)		93
+nim	clipRect	impeller/displaylist.html#clipRect,DisplayListBuilder,ImpellerRect,ImpellerClipOperation	proc clipRect(b: DisplayListBuilder; r: var ImpellerRect;\n         op: ImpellerClipOperation = kImpellerClipOperationIntersect)		100
+nim	clipOval	impeller/displaylist.html#clipOval,DisplayListBuilder,ImpellerRect,ImpellerClipOperation	proc clipOval(b: DisplayListBuilder; oval: var ImpellerRect;\n         op: ImpellerClipOperation = kImpellerClipOperationIntersect)		104
+nim	clipRoundedRect	impeller/displaylist.html#clipRoundedRect,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,ImpellerClipOperation	proc clipRoundedRect(b: DisplayListBuilder; r: var ImpellerRect;\n                radii: var ImpellerRoundingRadii;\n                op: ImpellerClipOperation = kImpellerClipOperationIntersect)		108
+nim	clipPath	impeller/displaylist.html#clipPath,DisplayListBuilder,Path,ImpellerClipOperation	proc clipPath(b: DisplayListBuilder; p: Path;\n         op: ImpellerClipOperation = kImpellerClipOperationIntersect)		113
+nim	drawPaint	impeller/displaylist.html#drawPaint,DisplayListBuilder,Paint	proc drawPaint(b: DisplayListBuilder; p: Paint)		119
+nim	drawLine	impeller/displaylist.html#drawLine,DisplayListBuilder,float32,float32,float32,float32,Paint	proc drawLine(b: DisplayListBuilder; x0, y0, x1, y1: float32; p: Paint)		122
+nim	drawDashedLine	impeller/displaylist.html#drawDashedLine,DisplayListBuilder,float32,float32,float32,float32,float32,float32,Paint	proc drawDashedLine(b: DisplayListBuilder; x0, y0, x1, y1, onLen, offLen: float32;\n               p: Paint)		127
+nim	drawRect	impeller/displaylist.html#drawRect,DisplayListBuilder,ImpellerRect,Paint	proc drawRect(b: DisplayListBuilder; r: var ImpellerRect; p: Paint)		133
+nim	drawOval	impeller/displaylist.html#drawOval,DisplayListBuilder,ImpellerRect,Paint	proc drawOval(b: DisplayListBuilder; oval: var ImpellerRect; p: Paint)		136
+nim	drawRoundedRect	impeller/displaylist.html#drawRoundedRect,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,Paint	proc drawRoundedRect(b: DisplayListBuilder; r: var ImpellerRect;\n                radii: var ImpellerRoundingRadii; p: Paint)		139
+nim	drawRoundedRectDifference	impeller/displaylist.html#drawRoundedRectDifference,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,ImpellerRect,ImpellerRoundingRadii,Paint	proc drawRoundedRectDifference(b: DisplayListBuilder; outer: var ImpellerRect;\n                          outerRadii: var ImpellerRoundingRadii;\n                          inner: var ImpellerRect;\n                          innerRadii: var ImpellerRoundingRadii; p: Paint)		143
+nim	drawPath	impeller/displaylist.html#drawPath,DisplayListBuilder,Path,Paint	proc drawPath(b: DisplayListBuilder; p: Path; paint: Paint)		149
+nim	drawDisplayList	impeller/displaylist.html#drawDisplayList,DisplayListBuilder,DisplayList,float32	proc drawDisplayList(b: DisplayListBuilder; d: DisplayList; opacity: float32 = 1.0)		152
+nim	drawShadow	impeller/displaylist.html#drawShadow,DisplayListBuilder,Path,ImpellerColor,float32,bool,float32	proc drawShadow(b: DisplayListBuilder; p: Path; color: var ImpellerColor;\n           elevation: float32; occluderTransparent: bool = false;\n           devicePixelRatio: float32 = 1.0)		155
+nim	drawTexture	impeller/displaylist.html#drawTexture,DisplayListBuilder,ImpellerTexture,float32,float32,ImpellerTextureSampling,Paint	proc drawTexture(b: DisplayListBuilder; tex: ImpellerTexture; x, y: float32;\n            sampling: ImpellerTextureSampling = kImpellerTextureSamplingLinear;\n            p: Paint = Paint(handle: nil))		161
+nim	drawTextureRect	impeller/displaylist.html#drawTextureRect,DisplayListBuilder,ImpellerTexture,ImpellerRect,ImpellerRect,ImpellerTextureSampling,Paint	proc drawTextureRect(b: DisplayListBuilder; tex: ImpellerTexture;\n                src: var ImpellerRect; dst: var ImpellerRect; sampling: ImpellerTextureSampling = kImpellerTextureSamplingLinear;\n                p: Paint = Paint(handle: nil))		168
+nimgrp	newdisplaylistbuilder	impeller/displaylist.html#newDisplayListBuilder-procs-all	proc		28
+nimgrp	=destroy	impeller/displaylist.html#=destroy-procs-all	proc		14
+nimgrp	=copy	impeller/displaylist.html#=copy-procs-all	proc		16
+nimgrp	isnil	impeller/displaylist.html#isNil-procs-all	proc		21

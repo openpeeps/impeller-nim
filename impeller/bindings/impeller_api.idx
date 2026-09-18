@@ -229,3 +229,13 @@ nim	ImpellerGlyphInfoGetGraphemeClusterCodeUnitRangeEnd	impeller/bindings/impell
 nim	ImpellerGlyphInfoGetGraphemeClusterBounds	impeller/bindings/impeller_api.html#ImpellerGlyphInfoGetGraphemeClusterBounds,ImpellerGlyphInfo,ptr.ImpellerRect	proc ImpellerGlyphInfoGetGraphemeClusterBounds(glyph_info: ImpellerGlyphInfo;\n    out_bounds: ptr ImpellerRect)		457
 nim	ImpellerGlyphInfoIsEllipsis	impeller/bindings/impeller_api.html#ImpellerGlyphInfoIsEllipsis,ImpellerGlyphInfo	proc ImpellerGlyphInfoIsEllipsis(glyph_info: ImpellerGlyphInfo): bool		458
 nim	ImpellerGlyphInfoGetTextDirection	impeller/bindings/impeller_api.html#ImpellerGlyphInfoGetTextDirection,ImpellerGlyphInfo	proc ImpellerGlyphInfoGetTextDirection(glyph_info: ImpellerGlyphInfo): ImpellerTextDirection		459
+nim	ImpellerVersionVariant	impeller/bindings/impeller_api.html#ImpellerVersionVariant	const ImpellerVersionVariant		468
+nim	ImpellerVersionMajor	impeller/bindings/impeller_api.html#ImpellerVersionMajor	const ImpellerVersionMajor		469
+nim	ImpellerVersionMinor	impeller/bindings/impeller_api.html#ImpellerVersionMinor	const ImpellerVersionMinor		470
+nim	ImpellerVersionPatch	impeller/bindings/impeller_api.html#ImpellerVersionPatch	const ImpellerVersionPatch		471
+nim	impellerMakeVersion	impeller/bindings/impeller_api.html#impellerMakeVersion,uint32,uint32,uint32,uint32	proc impellerMakeVersion(variant, major, minor, patch: uint32): uint32		473
+nim	ImpellerVersion	impeller/bindings/impeller_api.html#ImpellerVersion	const ImpellerVersion		477
+nim	impellerVersionGetVariant	impeller/bindings/impeller_api.html#impellerVersionGetVariant,uint32	proc impellerVersionGetVariant(version: uint32): uint32		481
+nim	impellerVersionGetMajor	impeller/bindings/impeller_api.html#impellerVersionGetMajor,uint32	proc impellerVersionGetMajor(version: uint32): uint32		484
+nim	impellerVersionGetMinor	impeller/bindings/impeller_api.html#impellerVersionGetMinor,uint32	proc impellerVersionGetMinor(version: uint32): uint32		487
+nim	impellerVersionGetPatch	impeller/bindings/impeller_api.html#impellerVersionGetPatch,uint32	proc impellerVersionGetPatch(version: uint32): uint32		490

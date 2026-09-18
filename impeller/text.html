@@ -16,10 +16,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.10">
+<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.12">
 
 <!-- JS -->
-<script type="text/javascript" src="../dochack.js?v=2.2.10"></script>
+<script type="text/javascript" src="../dochack.js?v=2.2.12"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -65,6 +65,7 @@
 <li><a class="reference" href="#FontWeight" title="FontWeight = ImpellerFontWeight">FontWeight</a></li>
 <li><a class="reference" href="#Paragraph" title="Paragraph = object
   handle*: ImpellerParagraph">Paragraph</a></li>
+<li><a class="reference" href="#StyledSpan" title="StyledSpan = tuple[text: string, style: TextStyle]">StyledSpan</a></li>
 <li><a class="reference" href="#TextAlign" title="TextAlign = ImpellerTextAlignment">TextAlign</a></li>
 <li><a class="reference" href="#TextDirection" title="TextDirection = ImpellerTextDirection">TextDirection</a></li>
 <li><a class="reference" href="#TextStyle" title="TextStyle = object
@@ -89,22 +90,48 @@
     <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">drawParagraph
   <li><a class="reference" href="#drawParagraph%2CImpellerDisplayListBuilder%2CParagraph%2Cfloat32%2Cfloat32" title="drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;
-              x, y: float32 = 0.0)">drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;
-              x, y: float32 = 0.0)</a></li>
+              x: float32 = 0.0; y: float32 = 0.0)">drawParagraph(builder: ImpellerDisplayListBuilder; para: Paragraph;
+              x: float32 = 0.0; y: float32 = 0.0)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">getHeight
   <li><a class="reference" href="#getHeight%2CParagraph" title="getHeight(p: Paragraph): float32">getHeight(p: Paragraph): float32</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">getLineCount
+  <li><a class="reference" href="#getLineCount%2CParagraph" title="getLineCount(p: Paragraph): uint32">getLineCount(p: Paragraph): uint32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">getLongestLineWidth
+  <li><a class="reference" href="#getLongestLineWidth%2CParagraph" title="getLongestLineWidth(p: Paragraph): float32">getLongestLineWidth(p: Paragraph): float32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">getMaxIntrinsicWidth
+  <li><a class="reference" href="#getMaxIntrinsicWidth%2CParagraph" title="getMaxIntrinsicWidth(p: Paragraph): float32">getMaxIntrinsicWidth(p: Paragraph): float32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">getMinIntrinsicWidth
+  <li><a class="reference" href="#getMinIntrinsicWidth%2CParagraph" title="getMinIntrinsicWidth(p: Paragraph): float32">getMinIntrinsicWidth(p: Paragraph): float32</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">getWidth
   <li><a class="reference" href="#getWidth%2CParagraph" title="getWidth(p: Paragraph): float32">getWidth(p: Paragraph): float32</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">getWordBoundary
+  <li><a class="reference" href="#getWordBoundary%2CParagraph%2Cint" title="getWordBoundary(p: Paragraph; index: int): tuple[first, last: uint64]">getWordBoundary(p: Paragraph; index: int): tuple[first, last: uint64]</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">layoutParagraph
   <li><a class="reference" href="#layoutParagraph%2CTypographyContext%2Cstring%2CTextStyle%2Cfloat32" title="layoutParagraph(ctx: TypographyContext; text: string; style: TextStyle;
                 width: float32): Paragraph">layoutParagraph(ctx: TypographyContext; text: string; style: TextStyle;
                 width: float32): Paragraph</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">layoutRichParagraph
+  <li><a class="reference" href="#layoutRichParagraph%2CTypographyContext%2CopenArray%5BStyledSpan%5D%2Cfloat32%2Cuint32%2Cstring" title="layoutRichParagraph(ctx: TypographyContext; spans: openArray[StyledSpan];
+                    width: float32; maxLines: uint32 = 0; ellipsis: string = &quot;&quot;): Paragraph">layoutRichParagraph(ctx: TypographyContext; spans: openArray[StyledSpan];
+                    width: float32; maxLines: uint32 = 0; ellipsis: string = &quot;&quot;): Paragraph</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">newTextStyle
@@ -130,12 +157,34 @@
 
 </ul>
 <ul class="simple nested-toc-section">registerFont
-  <li><a class="reference" href="#registerFont%2CTypographyContext%2Cseq%5Bbyte%5D%2Cstring" title="registerFont(ctx: var TypographyContext; fontData: seq[byte]; family: string): bool">registerFont(ctx: var TypographyContext; fontData: seq[byte]; family: string): bool</a></li>
+  <li><a class="reference" href="#registerFont%2CTypographyContext%2CopenArray%5Bbyte%5D%2Cstring" title="registerFont(ctx: var TypographyContext; fontData: openArray[byte];
+             family: string): bool">registerFont(ctx: var TypographyContext; fontData: openArray[byte];
+             family: string): bool</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">registerFontFile
+  <li><a class="reference" href="#registerFontFile%2CTypographyContext%2Cstring%2Cstring" title="registerFontFile(ctx: var TypographyContext; path, family: string): bool">registerFontFile(ctx: var TypographyContext; path, family: string): bool</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">release
   <li><a class="reference" href="#release%2CTypographyContext" title="release(ctx: var TypographyContext)">release(ctx: var TypographyContext)</a></li>
 <li><a class="reference" href="#release%2CParagraph" title="release(p: var Paragraph)">release(p: var Paragraph)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">setEllipsis
+  <li><a class="reference" href="#setEllipsis%2CImpellerParagraphStyle%2Cstring" title="setEllipsis(ps: ImpellerParagraphStyle; ellipsis: string)">setEllipsis(ps: ImpellerParagraphStyle; ellipsis: string)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">setHeight
+  <li><a class="reference" href="#setHeight%2CImpellerParagraphStyle%2Cfloat32" title="setHeight(ps: ImpellerParagraphStyle; h: float32)">setHeight(ps: ImpellerParagraphStyle; h: float32)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">setLocale
+  <li><a class="reference" href="#setLocale%2CImpellerParagraphStyle%2Cstring" title="setLocale(ps: ImpellerParagraphStyle; locale: string)">setLocale(ps: ImpellerParagraphStyle; locale: string)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">setMaxLines
+  <li><a class="reference" href="#setMaxLines%2CImpellerParagraphStyle%2Cuint32" title="setMaxLines(ps: ImpellerParagraphStyle; n: uint32)">setMaxLines(ps: ImpellerParagraphStyle; n: uint32)</a></li>
 
 </ul>
 
@@ -150,7 +199,13 @@
     
     <div id="tocRoot"></div>
     
-    <p class="module-desc">High-level API for text, typography, font sizes, and text colors.</p>
+    <p class="module-desc">High-level API for working with text in the Impeller rendering engine, including typography contexts, text styles, and paragraph layout and drawing:<ul class="simple"><li>TypographyContext for managing fonts and text layout</li>
+<li>TextStyle for defining the appearance of text</li>
+<li>Paragraph for representing laid out text ready to be drawn</li>
+<li>Alignment, direction, and decoration options for rich text styling</li>
+<li>Utility functions for converting between our types and Impeller's types</li>
+</ul>
+</p>
     <div class="section" id="6">
   <h1><a class="toc-backref" href="#6">Imports</a></h1>
   <dl class="item">
@@ -182,6 +237,14 @@
   <dd>
     
     Represents a laid out paragraph.
+    
+  </dd>
+</div>
+<div id="StyledSpan">
+  <dt><pre><a href="#StyledSpan"><span class="Identifier">StyledSpan</span></a> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">style</span><span class="Other">:</span> <a href="#TextStyle"><span class="Identifier">TextStyle</span></a><span class="Other">]</span></pre></dt>
+  <dd>
+    
+    One run of text with its own style, for rich paragraphs.
     
   </dd>
 </div>
@@ -236,7 +299,8 @@
     <div id="drawParagraph-procs-all">
   <div id="drawParagraph,ImpellerDisplayListBuilder,Paragraph,float32,float32">
   <dt><pre><span class="Keyword">proc</span> <a href="#drawParagraph%2CImpellerDisplayListBuilder%2CParagraph%2Cfloat32%2Cfloat32"><span class="Identifier">drawParagraph</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">para</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">;</span>
-                   <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+                   <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Draws the paragraph at the given position.
@@ -256,12 +320,72 @@
 </div>
 
 </div>
+<div id="getLineCount-procs-all">
+  <div id="getLineCount,Paragraph">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getLineCount%2CParagraph"><span class="Identifier">getLineCount</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="getLongestLineWidth-procs-all">
+  <div id="getLongestLineWidth,Paragraph">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getLongestLineWidth%2CParagraph"><span class="Identifier">getLongestLineWidth</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="getMaxIntrinsicWidth-procs-all">
+  <div id="getMaxIntrinsicWidth,Paragraph">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getMaxIntrinsicWidth%2CParagraph"><span class="Identifier">getMaxIntrinsicWidth</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="getMinIntrinsicWidth-procs-all">
+  <div id="getMinIntrinsicWidth,Paragraph">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getMinIntrinsicWidth%2CParagraph"><span class="Identifier">getMinIntrinsicWidth</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float32</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
 <div id="getWidth-procs-all">
   <div id="getWidth,Paragraph">
   <dt><pre><span class="Keyword">proc</span> <a href="#getWidth%2CParagraph"><span class="Identifier">getWidth</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float32</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Returns the max width of the paragraph.
+    
+  </dd>
+</div>
+
+</div>
+<div id="getWordBoundary-procs-all">
+  <div id="getWordBoundary,Paragraph,int">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getWordBoundary%2CParagraph%2Cint"><span class="Identifier">getWordBoundary</span></a><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">first</span><span class="Other">,</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="Identifier">uint64</span><span class="Other">]</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
     
   </dd>
 </div>
@@ -275,6 +399,20 @@
   <dd>
     
     Lays out a paragraph of text with the given style and width.
+    
+  </dd>
+</div>
+
+</div>
+<div id="layoutRichParagraph-procs-all">
+  <div id="layoutRichParagraph,TypographyContext,openArray[StyledSpan],float32,uint32,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#layoutRichParagraph%2CTypographyContext%2CopenArray%5BStyledSpan%5D%2Cfloat32%2Cuint32%2Cstring"><span class="Identifier">layoutRichParagraph</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <a href="#TypographyContext"><span class="Identifier">TypographyContext</span></a><span class="Other">;</span> <span class="Identifier">spans</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><a href="#StyledSpan"><span class="Identifier">StyledSpan</span></a><span class="Other">]</span><span class="Other">;</span>
+                         <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">maxLines</span><span class="Other">:</span> <span class="Identifier">uint32</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+                         <span class="Identifier">ellipsis</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">:</span> <a href="#Paragraph"><span class="Identifier">Paragraph</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Lays out a multi-style paragraph. Each span pushes its style, adds text, then pops. <tt class="docutils literal"><span class="pre"><span class="Identifier">maxLines</span></span></tt>/<tt class="docutils literal"><span class="pre"><span class="Identifier">ellipsis</span></span></tt> apply to the whole paragraph via an extra base style... kept simple: applied per-span is a no-op, so we set them on the first span's native style when present.
     
   </dd>
 </div>
@@ -312,12 +450,24 @@
 
 </div>
 <div id="registerFont-procs-all">
-  <div id="registerFont,TypographyContext,seq[byte],string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#registerFont%2CTypographyContext%2Cseq%5Bbyte%5D%2Cstring"><span class="Identifier">registerFont</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#TypographyContext"><span class="Identifier">TypographyContext</span></a><span class="Other">;</span> <span class="Identifier">fontData</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">byte</span><span class="Other">]</span><span class="Other">;</span>
+  <div id="registerFont,TypographyContext,openArray[byte],string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#registerFont%2CTypographyContext%2CopenArray%5Bbyte%5D%2Cstring"><span class="Identifier">registerFont</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#TypographyContext"><span class="Identifier">TypographyContext</span></a><span class="Other">;</span> <span class="Identifier">fontData</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">byte</span><span class="Other">]</span><span class="Other">;</span>
                   <span class="Identifier">family</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Registers a font from memory for use in this context.
+    Registers a font from memory for use in this context. <tt class="docutils literal"><span class="pre"><span class="Identifier">fontData</span></span></tt> must be non-empty. Impeller copies the data synchronously.
+    
+  </dd>
+</div>
+
+</div>
+<div id="registerFontFile-procs-all">
+  <div id="registerFontFile,TypographyContext,string,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#registerFontFile%2CTypographyContext%2Cstring%2Cstring"><span class="Identifier">registerFontFile</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#TypographyContext"><span class="Identifier">TypographyContext</span></a><span class="Other">;</span> <span class="Identifier">path</span><span class="Other">,</span> <span class="Identifier">family</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Convenience: loads a font file and registers it.
     
   </dd>
 </div>
@@ -342,6 +492,54 @@
 </div>
 
 </div>
+<div id="setEllipsis-procs-all">
+  <div id="setEllipsis,ImpellerParagraphStyle,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#setEllipsis%2CImpellerParagraphStyle%2Cstring"><span class="Identifier">setEllipsis</span></a><span class="Other">(</span><span class="Identifier">ps</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerParagraphStyle"><span class="Identifier">ImpellerParagraphStyle</span></a><span class="Other">;</span> <span class="Identifier">ellipsis</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span class="Identifier">inline</span><span class="Other">,</span>
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="setHeight-procs-all">
+  <div id="setHeight,ImpellerParagraphStyle,float32">
+  <dt><pre><span class="Keyword">proc</span> <a href="#setHeight%2CImpellerParagraphStyle%2Cfloat32"><span class="Identifier">setHeight</span></a><span class="Other">(</span><span class="Identifier">ps</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerParagraphStyle"><span class="Identifier">ImpellerParagraphStyle</span></a><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="setLocale-procs-all">
+  <div id="setLocale,ImpellerParagraphStyle,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#setLocale%2CImpellerParagraphStyle%2Cstring"><span class="Identifier">setLocale</span></a><span class="Other">(</span><span class="Identifier">ps</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerParagraphStyle"><span class="Identifier">ImpellerParagraphStyle</span></a><span class="Other">;</span> <span class="Identifier">locale</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="setMaxLines-procs-all">
+  <div id="setMaxLines,ImpellerParagraphStyle,uint32">
+  <dt><pre><span class="Keyword">proc</span> <a href="#setMaxLines%2CImpellerParagraphStyle%2Cuint32"><span class="Identifier">setMaxLines</span></a><span class="Other">(</span><span class="Identifier">ps</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerParagraphStyle"><span class="Identifier">ImpellerParagraphStyle</span></a><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span> {.<span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
 
   </dl>
 </div>
@@ -352,7 +550,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-07-07 18:01:32 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-09-18 17:25:46 UTC</small>
       </div>
     </div>
   </div>

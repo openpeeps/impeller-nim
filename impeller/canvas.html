@@ -16,10 +16,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.10">
+<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.12">
 
 <!-- JS -->
-<script type="text/javascript" src="../dochack.js?v=2.2.10"></script>
+<script type="text/javascript" src="../dochack.js?v=2.2.12"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -90,6 +90,10 @@
 <li><a class="reference" href="#addGradientPoint%2CLinearGradient%2Cstring%2Cfloat32" title="addGradientPoint(gradient: var LinearGradient; color: string; position: float32)">addGradientPoint(gradient: var LinearGradient; color: string; position: float32)</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">circleOvalRect
+  <li><a class="reference" href="#circleOvalRect%2CCircleShape" title="circleOvalRect(circle: CircleShape): ImpellerRect">circleOvalRect(circle: CircleShape): ImpellerRect</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">drawCircle
   <li><a class="reference" href="#drawCircle%2CImpellerDisplayListBuilder%2CCircleShape%2CImpellerPaint" title="drawCircle(builder: ImpellerDisplayListBuilder; circle: CircleShape;
            paint: ImpellerPaint)">drawCircle(builder: ImpellerDisplayListBuilder; circle: CircleShape;
@@ -98,6 +102,18 @@
 </ul>
 <ul class="simple nested-toc-section">drawGradient
   <li><a class="reference" href="#drawGradient%2CImpellerDisplayListBuilder%2CLinearGradient" title="drawGradient(builder: ImpellerDisplayListBuilder; gradient: var LinearGradient)">drawGradient(builder: ImpellerDisplayListBuilder; gradient: var LinearGradient)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">drawLine
+  <li><a class="reference" href="#drawLine%2CImpellerDisplayListBuilder%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32%2CColorRGBA%2Cfloat32" title="drawLine(builder: ImpellerDisplayListBuilder; x0, y0, x1, y1: float32;
+         color: ColorRGBA; width: float32 = 1.0)">drawLine(builder: ImpellerDisplayListBuilder; x0, y0, x1, y1: float32;
+         color: ColorRGBA; width: float32 = 1.0)</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">drawOval
+  <li><a class="reference" href="#drawOval%2CImpellerDisplayListBuilder%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32%2CColorRGBA" title="drawOval(builder: ImpellerDisplayListBuilder; cx, cy, rx, ry: float32;
+         color: ColorRGBA)">drawOval(builder: ImpellerDisplayListBuilder; cx, cy, rx, ry: float32;
+         color: ColorRGBA)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">drawRect
@@ -133,15 +149,15 @@
 
 </ul>
 <ul class="simple nested-toc-section">newRect
-  <li><a class="reference" href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32" title="newRect(width, height: float32; x, y: float32 = 0.0): RectShape">newRect(width, height: float32; x, y: float32 = 0.0): RectShape</a></li>
+  <li><a class="reference" href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32" title="newRect(width, height: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape">newRect(width, height: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">newRectangle
-  <li><a class="reference" href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32" title="newRectangle(width, height: float32; x, y: float32 = 0.0): RectShape">newRectangle(width, height: float32; x, y: float32 = 0.0): RectShape</a></li>
+  <li><a class="reference" href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32" title="newRectangle(width, height: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape">newRectangle(width, height: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">newSquare
-  <li><a class="reference" href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32" title="newSquare(size: float32; x, y: float32 = 0.0): RectShape">newSquare(size: float32; x, y: float32 = 0.0): RectShape</a></li>
+  <li><a class="reference" href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32" title="newSquare(size: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape">newSquare(size: float32; x: float32 = 0.0; y: float32 = 0.0): RectShape</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">setColor
@@ -153,6 +169,9 @@
 
     </ul>
   </details>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#19" id="69">Exports</a>
 </li>
 
 </ul>
@@ -166,7 +185,7 @@
     <div class="section" id="6">
   <h1><a class="toc-backref" href="#6">Imports</a></h1>
   <dl class="item">
-    <a class="reference external" href="bindings/impeller_api.html">bindings/impeller_api</a>
+    <a class="reference external" href="bindings/impeller_api.html">bindings/impeller_api</a>, <a class="reference external" href="paint.html">paint</a>, <a class="reference external" href="displaylist.html">displaylist</a>, <a class="reference external" href="colorsource.html">colorsource</a>
   </dl>
 </div>
 <div class="section" id="7">
@@ -242,6 +261,18 @@
 </div>
 
 </div>
+<div id="circleOvalRect-procs-all">
+  <div id="circleOvalRect,CircleShape">
+  <dt><pre><span class="Keyword">proc</span> <a href="#circleOvalRect%2CCircleShape"><span class="Identifier">circleOvalRect</span></a><span class="Other">(</span><span class="Identifier">circle</span><span class="Other">:</span> <a href="#CircleShape"><span class="Identifier">CircleShape</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerRect"><span class="Identifier">ImpellerRect</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Pure helper: bounding rect of a circle. Separated for testability.
+    
+  </dd>
+</div>
+
+</div>
 <div id="drawCircle-procs-all">
   <div id="drawCircle,ImpellerDisplayListBuilder,CircleShape,ImpellerPaint">
   <dt><pre><span class="Keyword">proc</span> <a href="#drawCircle%2CImpellerDisplayListBuilder%2CCircleShape%2CImpellerPaint"><span class="Identifier">drawCircle</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">circle</span><span class="Other">:</span> <a href="#CircleShape"><span class="Identifier">CircleShape</span></a><span class="Other">;</span>
@@ -257,11 +288,36 @@
 <div id="drawGradient-procs-all">
   <div id="drawGradient,ImpellerDisplayListBuilder,LinearGradient">
   <dt><pre><span class="Keyword">proc</span> <a href="#drawGradient%2CImpellerDisplayListBuilder%2CLinearGradient"><span class="Identifier">drawGradient</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span>
-                  <span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+                  <span class="Identifier">gradient</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="#LinearGradient"><span class="Identifier">LinearGradient</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Draws the specified gradient using the provided display list builder.
+    
+  </dd>
+</div>
+
+</div>
+<div id="drawLine-procs-all">
+  <div id="drawLine,ImpellerDisplayListBuilder,float32,float32,float32,float32,ColorRGBA,float32">
+  <dt><pre><span class="Keyword">proc</span> <a href="#drawLine%2CImpellerDisplayListBuilder%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32%2CColorRGBA%2Cfloat32"><span class="Identifier">drawLine</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">x0</span><span class="Other">,</span> <span class="Identifier">y0</span><span class="Other">,</span> <span class="Identifier">x1</span><span class="Other">,</span> <span class="Identifier">y1</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span>
+              <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Convenience: line with solid color + width.
+    
+  </dd>
+</div>
+
+</div>
+<div id="drawOval-procs-all">
+  <div id="drawOval,ImpellerDisplayListBuilder,float32,float32,float32,float32,ColorRGBA">
+  <dt><pre><span class="Keyword">proc</span> <a href="#drawOval%2CImpellerDisplayListBuilder%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32%2CColorRGBA"><span class="Identifier">drawOval</span></a><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <a href="bindings/impeller_api.html#ImpellerDisplayListBuilder"><span class="Identifier">ImpellerDisplayListBuilder</span></a><span class="Other">;</span> <span class="Identifier">cx</span><span class="Other">,</span> <span class="Identifier">cy</span><span class="Other">,</span> <span class="Identifier">rx</span><span class="Other">,</span> <span class="Identifier">ry</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span>
+              <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">ColorRGBA</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
     
   </dd>
 </div>
@@ -362,8 +418,8 @@
 </div>
 <div id="newRect-procs-all">
   <div id="newRect,float32,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRect</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.<span class="Identifier">inline</span><span class="Other">,</span>
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">proc</span> <a href="#newRect%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRect</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.
+    <span class="Identifier">inline</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Creates a new rectangle shape with the specified position and dimensions.
@@ -374,7 +430,7 @@
 </div>
 <div id="newRectangle-procs-all">
   <div id="newRectangle,float32,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRectangle</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#newRectangle%2Cfloat32%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newRectangle</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">,</span> <span class="Identifier">height</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -386,8 +442,8 @@
 </div>
 <div id="newSquare-procs-all">
   <div id="newSquare,float32,float32,float32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newSquare</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">proc</span> <a href="#newSquare%2Cfloat32%2Cfloat32%2Cfloat32"><span class="Identifier">newSquare</span></a><span class="Other">(</span><span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0</span><span class="Other">)</span><span class="Other">:</span> <a href="#RectShape"><span class="Identifier">RectShape</span></a> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Creates a new square shape with the specified position and size.
@@ -429,6 +485,12 @@
 
   </dl>
 </div>
+<div class="section" id="19">
+  <h1><a class="toc-backref" href="#19">Exports</a></h1>
+  <dl class="item">
+    <a href="paint.html#setImageFilter,Paint,ImpellerImageFilter"><span class="Identifier">setImageFilter</span></a>, <a href="paint.html#setStrokeWidth,Paint,float32"><span class="Identifier">setStrokeWidth</span></a>, <a href="paint.html#toImpellerColor,ColorRGBA"><span class="Identifier">toImpellerColor</span></a>, <a href="paint.html#newPaint"><span class="Identifier">newPaint</span></a>, <a href="paint.html#isNil,Paint"><span class="Identifier">isNil</span></a>, <a href="paint.html#setColorFilter,Paint,ImpellerColorFilter"><span class="Identifier">setColorFilter</span></a>, <a href="paint.html#setStrokeJoin,Paint,ImpellerStrokeJoin"><span class="Identifier">setStrokeJoin</span></a>, <a href="paint.html#setColor,Paint,string"><span class="Identifier">setColor</span></a>, <a href="paint.html#setColor,Paint,range[],range[],range[],range[]"><span class="Identifier">setColor</span></a>, <a href="paint.html#retain,Paint"><span class="Identifier">retain</span></a>, <a href="paint.html#setColor,Paint,ImpellerColor"><span class="Identifier">setColor</span></a>, <a href="paint.html#=copy,Paint,Paint"><span class="Identifier">=copy</span></a>, <a href="paint.html#setDrawStyle,Paint,ImpellerDrawStyle"><span class="Identifier">setDrawStyle</span></a>, <a href="paint.html#setColor,Paint,ColorRGBA"><span class="Identifier">setColor</span></a>, <a href="paint.html#setStrokeMiter,Paint,float32"><span class="Identifier">setStrokeMiter</span></a>, <a href="paint.html#withPaint.t,untyped,untyped"><span class="Identifier">withPaint</span></a>, <a href="paint.html#Paint"><span class="Identifier">Paint</span></a>, <a href="paint.html#setColorSource,Paint,ImpellerColorSource"><span class="Identifier">setColorSource</span></a>, <a href="paint.html#=destroy,Paint"><span class="Identifier">=destroy</span></a>, <a href="paint.html#setMaskFilter,Paint,ImpellerMaskFilter"><span class="Identifier">setMaskFilter</span></a>, <a href="paint.html#setBlendMode,Paint,ImpellerBlendMode"><span class="Identifier">setBlendMode</span></a>, <a href="paint.html#setStrokeCap,Paint,ImpellerStrokeCap"><span class="Identifier">setStrokeCap</span></a>, <a href="displaylist.html#save,DisplayListBuilder"><span class="Identifier">save</span></a>, <a href="path.html#close,PathBuilder"><span class="Identifier">close</span></a>, <a href="path.html#=destroy,PathBuilder"><span class="Identifier">=destroy</span></a>, <a href="displaylist.html#translationMatrix,float32,float32"><span class="Identifier">translationMatrix</span></a>, <a href="displaylist.html#clipOval,DisplayListBuilder,ImpellerRect,ImpellerClipOperation"><span class="Identifier">clipOval</span></a>, <a href="path.html#cubicTo,PathBuilder,float32,float32,float32,float32,float32,float32"><span class="Identifier">cubicTo</span></a>, <a href="displaylist.html#clipRoundedRect,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,ImpellerClipOperation"><span class="Identifier">clipRoundedRect</span></a>, <a href="paint.html#setStrokeMiter,Paint,float32_2"><span class="Identifier">setStrokeMiter</span></a>, <a href="displaylist.html#withSave.t,DisplayListBuilder,untyped"><span class="Identifier">withSave</span></a>, <a href="path.html#quadraticTo,PathBuilder,float32,float32,float32,float32"><span class="Identifier">quadraticTo</span></a>, <a href="paint.html#setColorFilter,Paint,ImpellerColorFilter_2"><span class="Identifier">setColorFilter</span></a>, <a href="path.html#isNil,Path"><span class="Identifier">isNil</span></a>, <a href="path.html#isNil,PathBuilder"><span class="Identifier">isNil</span></a>, <a href="displaylist.html#restore,DisplayListBuilder"><span class="Identifier">restore</span></a>, <a href="path.html#uniformRadii,float32"><span class="Identifier">uniformRadii</span></a>, <a href="displaylist.html#drawOval,DisplayListBuilder,ImpellerRect,Paint"><span class="Identifier">drawOval</span></a>, <a href="displaylist.html#clipPath,DisplayListBuilder,Path,ImpellerClipOperation"><span class="Identifier">clipPath</span></a>, <a href="displaylist.html#clipRect,DisplayListBuilder,ImpellerRect,ImpellerClipOperation"><span class="Identifier">clipRect</span></a>, <a href="displaylist.html#drawDisplayList,DisplayListBuilder,DisplayList,float32"><span class="Identifier">drawDisplayList</span></a>, <a href="displaylist.html#drawTextureRect,DisplayListBuilder,ImpellerTexture,ImpellerRect,ImpellerRect,ImpellerTextureSampling,Paint"><span class="Identifier">drawTextureRect</span></a>, <a href="displaylist.html#newDisplayListBuilder,float32,float32,float32,float32"><span class="Identifier">newDisplayListBuilder</span></a>, <a href="path.html#moveTo,PathBuilder,float32,float32"><span class="Identifier">moveTo</span></a>, <a href="paint.html#isNil,Paint_2"><span class="Identifier">isNil</span></a>, <a href="paint.html#setColor,Paint,ImpellerColor_2"><span class="Identifier">setColor</span></a>, <a href="paint.html#retain,Paint_2"><span class="Identifier">retain</span></a>, <a href="path.html#addRect,PathBuilder,ImpellerRect"><span class="Identifier">addRect</span></a>, <a href="paint.html#=destroy,Paint_2"><span class="Identifier">=destroy</span></a>, <a href="displaylist.html#drawTexture,DisplayListBuilder,ImpellerTexture,float32,float32,ImpellerTextureSampling,Paint"><span class="Identifier">drawTexture</span></a>, <a href="displaylist.html#rotate,DisplayListBuilder,float32"><span class="Identifier">rotate</span></a>, <a href="displaylist.html#finish,DisplayListBuilder"><span class="Identifier">finish</span></a>, <a href="path.html#=copy,Path,Path"><span class="Identifier">=copy</span></a>, <a href="displaylist.html#drawLine,DisplayListBuilder,float32,float32,float32,float32,Paint"><span class="Identifier">drawLine</span></a>, <a href="path.html#addRoundedRect,PathBuilder,ImpellerRect,ImpellerRoundingRadii"><span class="Identifier">addRoundedRect</span></a>, <a href="paint.html#newPaint_2"><span class="Identifier">newPaint</span></a>, <a href="displaylist.html#drawRoundedRect,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,Paint"><span class="Identifier">drawRoundedRect</span></a>, <a href="displaylist.html#saveLayer,DisplayListBuilder,ImpellerRect,Paint,ImpellerImageFilter"><span class="Identifier">saveLayer</span></a>, <a href="paint.html#setMaskFilter,Paint,ImpellerMaskFilter_2"><span class="Identifier">setMaskFilter</span></a>, <a href="paint.html#setDrawStyle,Paint,ImpellerDrawStyle_2"><span class="Identifier">setDrawStyle</span></a>, <a href="path.html#newPathBuilder"><span class="Identifier">newPathBuilder</span></a>, <a href="displaylist.html#drawRect,DisplayListBuilder,ImpellerRect,Paint"><span class="Identifier">drawRect</span></a>, <a href="displaylist.html#newDisplayListBuilder,ImpellerRect"><span class="Identifier">newDisplayListBuilder</span></a>, <a href="displaylist.html#scaleMatrix,float32,float32"><span class="Identifier">scaleMatrix</span></a>, <a href="paint.html#setStrokeCap,Paint,ImpellerStrokeCap_2"><span class="Identifier">setStrokeCap</span></a>, <a href="path.html#addArc,PathBuilder,ImpellerRect,float32,float32"><span class="Identifier">addArc</span></a>, <a href="paint.html#setBlendMode,Paint,ImpellerBlendMode_2"><span class="Identifier">setBlendMode</span></a>, <a href="displaylist.html#=copy,DisplayListBuilder,DisplayListBuilder"><span class="Identifier">=copy</span></a>, <a href="displaylist.html#identityMatrix"><span class="Identifier">identityMatrix</span></a>, <a href="displaylist.html#isNil,DisplayList"><span class="Identifier">isNil</span></a>, <a href="paint.html#setStrokeJoin,Paint,ImpellerStrokeJoin_2"><span class="Identifier">setStrokeJoin</span></a>, <a href="displaylist.html#getTransform,DisplayListBuilder"><span class="Identifier">getTransform</span></a>, <a href="displaylist.html#drawPaint,DisplayListBuilder,Paint"><span class="Identifier">drawPaint</span></a>, <a href="paint.html#=copy,Paint,Paint_2"><span class="Identifier">=copy</span></a>, <a href="displaylist.html#=destroy,DisplayList"><span class="Identifier">=destroy</span></a>, <a href="paint.html#setColor,Paint,string_2"><span class="Identifier">setColor</span></a>, <a href="path.html#addOval,PathBuilder,ImpellerRect"><span class="Identifier">addOval</span></a>, <a href="displaylist.html#drawDashedLine,DisplayListBuilder,float32,float32,float32,float32,float32,float32,Paint"><span class="Identifier">drawDashedLine</span></a>, <a href="path.html#=destroy,Path"><span class="Identifier">=destroy</span></a>, <a href="paint.html#setImageFilter,Paint,ImpellerImageFilter_2"><span class="Identifier">setImageFilter</span></a>, <a href="path.html#buildCircle,float32,float32,float32"><span class="Identifier">buildCircle</span></a>, <a href="path.html#lineTo,PathBuilder,float32,float32"><span class="Identifier">lineTo</span></a>, <a href="paint.html#setStrokeWidth,Paint,float32_2"><span class="Identifier">setStrokeWidth</span></a>, <a href="displaylist.html#DisplayList"><span class="Identifier">DisplayList</span></a>, <a href="displaylist.html#isNil,DisplayListBuilder"><span class="Identifier">isNil</span></a>, <a href="displaylist.html#restoreToCount,DisplayListBuilder,uint32"><span class="Identifier">restoreToCount</span></a>, <a href="displaylist.html#retain,DisplayList"><span class="Identifier">retain</span></a>, <a href="path.html#addRect,PathBuilder,float32,float32,float32,float32"><span class="Identifier">addRect</span></a>, <a href="path.html#Path"><span class="Identifier">Path</span></a>, <a href="displaylist.html#getSaveCount,DisplayListBuilder"><span class="Identifier">getSaveCount</span></a>, <a href="path.html#addOval,PathBuilder,float32,float32,float32,float32"><span class="Identifier">addOval</span></a>, <a href="paint.html#Paint_2"><span class="Identifier">Paint</span></a>, <a href="paint.html#setColorSource,Paint,ImpellerColorSource_2"><span class="Identifier">setColorSource</span></a>, <a href="displaylist.html#scale,DisplayListBuilder,float32,float32"><span class="Identifier">scale</span></a>, <a href="displaylist.html#=destroy,DisplayListBuilder"><span class="Identifier">=destroy</span></a>, <a href="displaylist.html#translate,DisplayListBuilder,float32,float32"><span class="Identifier">translate</span></a>, <a href="paint.html#toImpellerColor,ColorRGBA_2"><span class="Identifier">toImpellerColor</span></a>, <a href="path.html#copyPath,PathBuilder,ImpellerFillType"><span class="Identifier">copyPath</span></a>, <a href="displaylist.html#DisplayListBuilder"><span class="Identifier">DisplayListBuilder</span></a>, <a href="path.html#retain,Path"><span class="Identifier">retain</span></a>, <a href="paint.html#setColor,Paint,range[],range[],range[],range[]_2"><span class="Identifier">setColor</span></a>, <a href="path.html#PathBuilder"><span class="Identifier">PathBuilder</span></a>, <a href="paint.html#withPaint.t,untyped,untyped_2"><span class="Identifier">withPaint</span></a>, <a href="displaylist.html#transform,DisplayListBuilder,ImpellerMatrix"><span class="Identifier">transform</span></a>, <a href="displaylist.html#drawShadow,DisplayListBuilder,Path,ImpellerColor,float32,bool,float32"><span class="Identifier">drawShadow</span></a>, <a href="path.html#=copy,PathBuilder,PathBuilder"><span class="Identifier">=copy</span></a>, <a href="displaylist.html#=copy,DisplayList,DisplayList"><span class="Identifier">=copy</span></a>, <a href="path.html#takePath,PathBuilder,ImpellerFillType"><span class="Identifier">takePath</span></a>, <a href="paint.html#setColor,Paint,ColorRGBA_2"><span class="Identifier">setColor</span></a>, <a href="displaylist.html#drawRoundedRectDifference,DisplayListBuilder,ImpellerRect,ImpellerRoundingRadii,ImpellerRect,ImpellerRoundingRadii,Paint"><span class="Identifier">drawRoundedRectDifference</span></a>, <a href="path.html#getBounds,Path"><span class="Identifier">getBounds</span></a>, <a href="displaylist.html#setTransform,DisplayListBuilder,ImpellerMatrix"><span class="Identifier">setTransform</span></a>, <a href="path.html#buildRect,float32,float32,float32,float32"><span class="Identifier">buildRect</span></a>, <a href="displaylist.html#resetTransform,DisplayListBuilder"><span class="Identifier">resetTransform</span></a>, <a href="displaylist.html#drawPath,DisplayListBuilder,Path,Paint"><span class="Identifier">drawPath</span></a>, <a href="texture.html#=destroy,FragmentProgram"><span class="Identifier">=destroy</span></a>, <a href="texture.html#FragmentProgram"><span class="Identifier">FragmentProgram</span></a>, <a href="colorsource.html#sweepGradient,ImpellerPoint,float32,float32,openArray[ImpellerColor],openArray[cfloat],ImpellerTileMode"><span class="Identifier">sweepGradient</span></a>, <a href="texture.html#isNil,Texture"><span class="Identifier">isNil</span></a>, <a href="colorsource.html#conicalGradient,ImpellerPoint,float32,ImpellerPoint,float32,openArray[ImpellerColor],openArray[cfloat],ImpellerTileMode"><span class="Identifier">conicalGradient</span></a>, <a href="texture.html#newTextureWithContents,ImpellerContext,int64,int64,openArray[uint8],ImpellerPixelFormat,uint32"><span class="Identifier">newTextureWithContents</span></a>, <a href="colorsource.html#radialGradient,ImpellerPoint,float32,openArray[ImpellerColor],openArray[cfloat],ImpellerTileMode"><span class="Identifier">radialGradient</span></a>, <a href="colorsource.html#=destroy,ColorSource"><span class="Identifier">=destroy</span></a>, <a href="colorsource.html#isNil,ColorSource"><span class="Identifier">isNil</span></a>, <a href="texture.html#retain,Texture"><span class="Identifier">retain</span></a>, <a href="texture.html#=copy,FragmentProgram,FragmentProgram"><span class="Identifier">=copy</span></a>, <a href="texture.html#loadFragmentProgram,string"><span class="Identifier">loadFragmentProgram</span></a>, <a href="texture.html#=destroy,Texture"><span class="Identifier">=destroy</span></a>, <a href="colorsource.html#=copy,ColorSource,ColorSource"><span class="Identifier">=copy</span></a>, <a href="texture.html#=copy,Texture,Texture"><span class="Identifier">=copy</span></a>, <a href="colorsource.html#linearGradient,ImpellerPoint,ImpellerPoint,openArray[ImpellerColor],openArray[cfloat],ImpellerTileMode"><span class="Identifier">linearGradient</span></a>, <a href="texture.html#solidTexture,ImpellerContext,uint8,uint8,uint8,uint8,int64,int64"><span class="Identifier">solidTexture</span></a>, <a href="colorsource.html#ColorSource"><span class="Identifier">ColorSource</span></a>, <a href="texture.html#isNil,FragmentProgram"><span class="Identifier">isNil</span></a>, <a href="colorsource.html#linearGradient,ImpellerPoint,ImpellerPoint,openArray[ImpellerColor],openArray[cfloat],ImpellerTileMode,ImpellerMatrix"><span class="Identifier">linearGradient</span></a>, <a href="texture.html#newTextureFromGLHandle,ImpellerContext,uint64,int64,int64,ImpellerPixelFormat"><span class="Identifier">newTextureFromGLHandle</span></a>, <a href="texture.html#glHandle,Texture"><span class="Identifier">glHandle</span></a>, <a href="colorsource.html#imageSource,Texture,ImpellerTileMode,ImpellerTileMode,ImpellerTextureSampling"><span class="Identifier">imageSource</span></a>, <a href="texture.html#newFragmentProgram,openArray[byte]"><span class="Identifier">newFragmentProgram</span></a>, <a href="texture.html#Texture"><span class="Identifier">Texture</span></a>
+  </dl>
+</div>
 
   </div>
 </div>
@@ -436,7 +498,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-07-07 18:01:32 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-09-18 17:25:46 UTC</small>
       </div>
     </div>
   </div>
