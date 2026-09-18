@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <code>nimble install impeller</code>
+  <code>nimble install impeller</code> | <code>clue install impeller</code>
 </p>
 
 <p align="center">
@@ -15,16 +15,21 @@ Impeller is a 2D graphics rendering engine used in Flutter. This package provide
 
 Impeller needs a GPU. There is no software renderer upstream, so rendering requires Metal (macOS), Vulkan, or OpenGL ES (Linux, other).
 
+
+## 😍 Key Features
+- High-performance 2D rendering
+- Support for multiple backends (Metal, Vulkan, OpenGL)
+- Advanced text rendering & Layouting
+- Rich set of drawing primitives and effects
+- Cross-platform support (Windows, macOS, Linux)
+- Easy to Embed (Any OpenGL/Vulkan/Metal)-based app can embed Impeller
+- Low-level API access for maximum control and flexibility
+- High-level API for easier development (coming soon)
+
 ## Requirements
 
 - Nim >= 2.0.0
-- The Impeller standalone SDK: `impeller.h` and `libimpeller.dylib` / `libimpeller.so`. With MacPorts they live in `/opt/local`. Point `LIBIMPELLER_DIR` elsewhere if you installed them in a custom prefix.
-- GLFW for the examples and the GPU test (`libglfw`).
-- The `chroma` package for color handling (installed automatically).
-
-```sh
-nimble install impeller
-```
+- The Impeller library on your system. Follow the instructions from the [Impeller Standalone SDK](https://github.com/flutter/flutter/blob/main/engine/src/flutter/impeller/toolkit/interop/README.md) to build and install the library for your platform.
 
 ## Basic examples
 
